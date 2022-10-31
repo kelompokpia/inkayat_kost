@@ -6,3 +6,4 @@ fitur titit
 fitur apa ini?
 fitur yesus
 fitur murtad
+fitur riz the mid god
