@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kamar;
 
 
 class kostController extends Controller
@@ -14,7 +15,9 @@ class kostController extends Controller
      */
     public function index()
     {
-        return view('portofolio.index');
+        return view('portofolio.index', [
+            "kamar" => Kamar::all()
+        ]);
     }
 
     /**

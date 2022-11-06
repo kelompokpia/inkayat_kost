@@ -21,4 +21,7 @@
       </div>
     </div>
   </nav>
+
+  @include('partials.kamar')
+  @include('partials.kontak')
 @endsection

@@ -1,0 +1,27 @@
+/* Edit Bootstrap */
+.card{
+    margin-bottom: 1rem;
+}
+
+.disabled{
+    border: 0;
+}
+
+/* Akhir Edit Bootstrap */
+
+/* Partials.Kamar */
+.kamar-status{
+    color: green;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
+
+.kamar-status-terisi{
+    color: red;
+    font-size: 0.8em;
+    text-transform: uppercase;
+    margin: 0 0 0 0;
+}
+
+/* Partials.Kamar */

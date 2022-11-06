@@ -1,6 +1,10 @@
 <?php
 
+// use App\Models\Post;
+use App\Models\Kamar;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
