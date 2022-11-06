@@ -20,6 +20,18 @@
         </ul>
       </div>
     </div>
+    <div class="container mt-5">
+      <br>
+      <h1 style="rasputin" size="25" align="center"><pre>   WELCOME TO</pre></h1>
+      <h1 style="rasputin" size="37"align="center"><pre>       InkayatKost</pre></h1>
+      <pre style="now" size="19"> 
+                                                                  Hai Sobat Kost...
+                                                                  Sedang cari kost-kostan di sekitar Jepara?
+                                                                  Inkayat Kost solusinya.
+  
+                                                                  Kost murah dengan fasilitas lengkap. 
+                                                                  Lingkungan aman, nyaman, asri, dan tenang.
+      </pre>
   </nav>
 
   @include('partials.kamar')
