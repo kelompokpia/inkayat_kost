@@ -1,3 +1,4 @@
+@extends('layout.template')
 <section id="kamar" class="py-5">
     <div class="container-lg">
       <div class="row justify-content-center">

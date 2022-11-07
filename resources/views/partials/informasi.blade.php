@@ -1,4 +1,4 @@
-
+@extends('layout.template')
 <section style="background-color: #dbd9a1; widht:10000px;">
     <div class="container py-4">
         <div class="row ">
