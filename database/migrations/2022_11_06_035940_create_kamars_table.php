@@ -13,19 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kamars', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama_kamar');
-            $table->string('slug');
-            $table->string('nama_penghuni');
-            $table->int('nik_penghuni');
-            $table->int('telepon_penghuni');
-            $table->date('tanggal_masuk');
-            $table->string('status_kamar');
-            $table->int('harga_kamar');
-            $table->text('deskripsi_kamar');
-            $table->timestamps();
-        });
+        // Schema::create('kamars', function (Blueprint $table) {
+        //     $table->string('nama_kamar');
+        //     $table->string('slug');
+        //     $table->string('nama_penghuni');
+        //     $table->integer('nik_penghuni');
+        //     $table->unique('nik_penghuni');
+        //     $table->integer('telepon_penghuni');
+        //     $table->date('tanggal_masuk');
+        //     $table->string('status_kamar');
+        //     $table->integer('harga_kamar');
+        //     $table->text('deskripsi_kamar');
+        // });
     }
 
     /**

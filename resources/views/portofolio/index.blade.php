@@ -8,18 +8,21 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item mx-1">
-            <a class="nav-link rounded text-white" style="background-color: #aa8b56" aria-current="page" href="#">Cari Kamar</a>
-          </li>
-          <li class="nav-item mx-1">
-            <a class="nav-link rounded text-white" style="background-color: #aa8b56" href="#about">Kontak</a>
+          <li class="nav-item">
+            <a class="nav-link active btn text-dark" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a type="button"  style="background-color: #aa8b56" class="rounded text-white btn btn-outline" href="#hobi">Login Admin</a>
+            <a class="nav-link btn text-dark" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-danger" href="#services">Services</a>
           </li>
         </ul>
       </div>
     </div>
+  </nav>
+
+  
     <div class="container mt-5">
       <br>
       <h1 style="rasputin" size="25" align="center"><pre>   WELCOME TO</pre></h1>
@@ -28,7 +31,7 @@
                                                                   Hai Sobat Kost...
                                                                   Sedang cari kost-kostan di sekitar Jepara?
                                                                   Inkayat Kost solusinya.
-  
+    
                                                                   Kost murah dengan fasilitas lengkap. 
                                                                   Lingkungan aman, nyaman, asri, dan tenang.
       </pre>
@@ -53,8 +56,9 @@
        10. Pintu pagar ditutup pukul 22.00 WIB dan apabila ada keperluan mendadak/mendesak harap segera memberitahukan kepada pemilik kost.
        </pre>
  
-  </nav>
+  
 
   @include('partials.kamar')
   @include('partials.kontak')
+
 @endsection
