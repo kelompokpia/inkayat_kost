@@ -9,21 +9,44 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active btn text-dark" aria-current="page" href="#home">Home</a>
+            <a class="nav-link btn text-dark" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn text-dark" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-danger" href="#services">Services</a>
+            <button class="nav-link btn text-light btn-dark" href="#services">Login Admin</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  
-    <div class="container mt-5">
+<section class="home" id="home">
+  <div class="container-lg">
+    <div class="row min-vh-100 align-items-center align-content-center">
+      <div class="col-md-6 mt-5 mt-md-0">
+        <div class="home-img text-center">
+          <img src="{{ asset('img/logo.jpg')}}" class="w-100" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 mt-5 mt-md-0">
+        <div class="home-text">
+          <p class="fw-bold">WELCOME TO</p>
+          <h5 class="fw-bold fs-1">INKAYAT KOST</h5>
+          <p class="fs-5 text-muted">Hai Sobat Kost...</p>
+          <p class="fs-5 text-muted">Sedang cari kost-kostan di sekitar Jepara? Inkayat Kost solusinya.</p>
+          <p class="fs-5 text-muted">Kost murah dengan fasilitas lengkap lingkungan aman, nyaman, asri, dan tenang.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="home">
+
+</section>
+    <!-- <div class="container mt-5">
       <br>
       <h1 style="rasputin" size="25" align="center"><pre>   WELCOME TO</pre></h1>
       <h1 style="rasputin" size="37"align="center"><pre>       InkayatKost</pre></h1>
@@ -54,11 +77,11 @@
            kenyamananan, dan ketertiban bersama.
         9. Tamu penghuni kost yang menginap harap segera melaporkan kepada pemilik kost.
        10. Pintu pagar ditutup pukul 22.00 WIB dan apabila ada keperluan mendadak/mendesak harap segera memberitahukan kepada pemilik kost.
-       </pre>
+       </pre> -->
  
   
 
   @include('partials.kamar')
   @include('partials.kontak')
 
-@endsection
+@endsectionphp
