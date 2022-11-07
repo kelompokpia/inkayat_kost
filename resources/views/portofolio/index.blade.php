@@ -35,8 +35,8 @@
           <h1 class="fw-bold fs-3">WELCOME TO</h1>
           <h5 class="fw-bold fs-1">INKAYAT KOST</h5>
           <p class="fs-5 text-muted">Hai Sobat Kost...</p>
-          <p class="fs-5 text-muted">Sedang cari kost-kostan di sekitar Jepara? Inkayat Kost solusinya.</p>
-          <p class="fs-5 text-muted">Kost murah dengan fasilitas lengkap lingkungan aman, nyaman, asri, dan tenang.</p>
+          <p class="fs-5 text-muted">Sedang mencari kost di daerah Jepara? dengan harga murah, fasilitas lengkap, lingkungan tenang, aman, nyaman, dan asri?</p>
+          <p class="fs-5 text-muted">INKAYAT KOST SOLUSINYA.....!!!</p>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
 </section>
 
 <section class="home">
-  
+
 </section>
     <!-- <div class="container mt-5">
       <br>
