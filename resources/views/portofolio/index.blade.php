@@ -84,4 +84,4 @@
   @include('partials.kamar')
   @include('partials.kontak')
 
-@endsection
+@endsectionphp
