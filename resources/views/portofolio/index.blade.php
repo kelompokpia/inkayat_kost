@@ -44,7 +44,31 @@
 </section>
 
 <section class="home">
-
+  <div class="container-lg">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+          <div class="section-title text-center">
+              <h2 class="fw-bold mb-5">PERATURAN</h2>
+          </div>
+      </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <div class="text-rules">
+        <h6>1. Mempunyai Kartu Tanda Penduduk (KTP)/ Kartu Mahasiswa/Kartu Pelajar yang berlaku dan menyerahkan fotocopy kartu tersebut 2 lembar kepada pemilik kost.</h6>
+        <h6>2. DILARANG membawa tamu laki-laki masuk ke dalam rumah kost.</h6>
+        <h6>3. DILARANG KERAS melakukan tindakan asusila.</h6>
+        <h6>4. DILARANG KERAS mengkonsumsi/memakai/menggunakan narkoba, minuman keras, serta barang-barang berbahaya lainnya.</h6>
+        <h6>5. Pastikan semua barang-barang berharga penghuni kost dijaga dengan baik oleh pemiliknya masing-masing,jika terjadi kehilangan bukan menjadi tanggung jawab pemilik kost.</h6>
+        <h6>6. Tidak diperkenankan saling mengganggu sesama penghuni kost dengan menyalakan/menghidupkan radio,televisi terlalu keras dan berbicara dengan sangat keras (berteriak).</h6>
+        <h6>7. </h6>
+        <h6></h6>
+        <h6></h6>
+        <h6></h6>
+      </div>
+    </div>
+  </div>
+  </div>
 </section>
     <!-- <div class="container mt-5">
       <br>
