@@ -16,7 +16,7 @@
     
   
   <body style = "font-family: 'Secular One', sans-serif;" class="bg-white">
-    <main class="container">
+    <main>
 
         @yield('konten')
     </main>
