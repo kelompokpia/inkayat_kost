@@ -9,38 +9,42 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active btn text-dark" aria-current="page" href="#home">Home</a>
+            <a class="nav-link btn text-dark" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link btn text-dark" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-danger" href="#services">Services</a>
+            <button class="nav-link btn text-light btn-dark" href="#services">Login Admin</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-<section class="home py-5">
+<section class="home" id="home">
   <div class="container-lg">
     <div class="row min-vh-100 align-items-center align-content-center">
       <div class="col-md-6 mt-5 mt-md-0">
         <div class="home-img text-center">
-          <img src="{{ asset('img/kamar-1.jpg')}}" class="w-25" alt="">
+          <img src="{{ asset('img/logo.jpg')}}" class="w-100" alt="">
         </div>
       </div>
       <div class="col-md-6 mt-5 mt-md-0">
         <div class="home-text">
-          <p class="text-muted">WELCOME TO</p>
-          <p class="fw-bold fs-1">InkayatKost</p>
-          <p class="fs-4 text-muted">Hai Sobat Kost...</p>
-          <p class="fs-4 text-muted">Sedang cari kost-kostan di sekitar Jepara? Inkayat Kost solusinya.</p>
-          <p class="fs-4 text-muted">Kost murah dengan fasilitas lengkap lingkungan aman, nyaman, asri, dan tenang.</p>
+          <p class="fw-bold">WELCOME TO</p>
+          <h5 class="fw-bold fs-1">INKAYAT KOST</h5>
+          <p class="fs-5 text-muted">Hai Sobat Kost...</p>
+          <p class="fs-5 text-muted">Sedang cari kost-kostan di sekitar Jepara? Inkayat Kost solusinya.</p>
+          <p class="fs-5 text-muted">Kost murah dengan fasilitas lengkap lingkungan aman, nyaman, asri, dan tenang.</p>
         </div>
       </div>
     </div>
   </div>
+</section>
+
+<section class="home">
+
 </section>
     <!-- <div class="container mt-5">
       <br>
