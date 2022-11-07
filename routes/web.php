@@ -1,6 +1,10 @@
 <?php
 
+// use App\Models\Post;
+use App\Models\Kamar;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('index', App\Http\Controllers\kostController::class);
