@@ -32,7 +32,7 @@
       </div>
       <div class="col-md-6 mt-5 mt-md-0">
         <div class="home-text">
-          <p class="fw-bold">WELCOME TO</p>
+          <h1 class="fw-bold fs-3">WELCOME TO</h1>
           <h5 class="fw-bold fs-1">INKAYAT KOST</h5>
           <p class="fs-5 text-muted">Hai Sobat Kost...</p>
           <p class="fs-5 text-muted">Sedang cari kost-kostan di sekitar Jepara? Inkayat Kost solusinya.</p>
@@ -44,7 +44,7 @@
 </section>
 
 <section class="home">
-
+  
 </section>
     <!-- <div class="container mt-5">
       <br>
