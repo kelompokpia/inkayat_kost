@@ -1,10 +1,12 @@
-<section id="kamar" class="mt-5">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col mb-2  ">
-          <h2>Kamar</h2>
+<section id="kamar" class="py-5">
+    <div class="container-lg">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="section-title text-center">
+                <h2 class="fw-bold mt-4">KAMAR</h2>
+            </div>
         </div>
-      </div>
+    </div>
       <div class="row justify-content-center">
         @foreach ($kamar as $kamar)
         <div class="col-md-3 col-6">

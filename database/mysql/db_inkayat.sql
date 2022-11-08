@@ -9,8 +9,7 @@
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
-SET time_zone = "+00:00";
-
+SET time_zone = "+00:00";db_inkayatt
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -45,9 +44,9 @@ CREATE TABLE `kamars` (
 --
 
 INSERT INTO `kamars` (`id_kamar`, `nama_kamar`, `gambar_kamar`, `nama_penghuni`, `nik_penghuni`, `telepon_penghuni`, `tanggal_masuk`, `deskripsi_kamar`, `status_kamar`, `harga_kamar`) VALUES
-(000001, 'Kamar 1', 'kamar-1.jpeg', 'Siti Muskanan', 0, 0, '2022-11-01', 'Lorem ipsum dolor sit amet consectetur.', 'Tersedia', 410),
-(000002, 'Kamar 2', 'kamar-2.jpeg', 'Indah Ratna Sari', 0, 0, '2022-11-01', 'Lorem ipsum dolor sit amet consectetur.', 'Terisi', 410),
-(000003, 'Kamar 3', 'kamar-3.jpeg', 'Sri Ayu Ningtyas', 0, 0, '2022-11-02', 'Lorem ipsum dolor sit amet consectetur.', 'Tersedia', 390);
+(000001, 'Kamar 1', 'kamar-1.jpg', 'Siti Muskanan', 0, 0, '2022-11-01', 'Lorem ipsum dolor sit amet consectetur.', 'Tersedia', 410),
+(000002, 'Kamar 2', 'kamar-2.jpg', 'Indah Ratna Sari', 0, 0, '2022-11-01', 'Lorem ipsum dolor sit amet consectetur.', 'Terisi', 410),
+(000003, 'Kamar 3', 'kamar-3.webp', 'Sri Ayu Ningtyas', 0, 0, '2022-11-02', 'Lorem ipsum dolor sit amet consectetur.', 'Tersedia', 390);
 
 -- --------------------------------------------------------
 
