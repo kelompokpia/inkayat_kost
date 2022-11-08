@@ -75,6 +75,6 @@
 
   @include('partials.kamar')
   @include('partials.kontak')
-  @include('partials.footer')
+  @include('partials.informasi')
 
 @endsection
