@@ -1,5 +1,5 @@
 @extends('layout.template')
-<section class="d-flex h-100 w-100 justify-content-center align-items-center" style="background-color: #dbd9a1">
+<!-- <section class="d-flex h-100 w-100 justify-content-center align-items-center" style="background-color: #dbd9a1">
     <div class="d-flex w-25 h-50 rounded-5 border border-dark border-5 justify-content-center align-items-center">
         <form>
             <div>
@@ -16,4 +16,22 @@
             <button type="submit" class="btn btn-dark text-light w-100 ">Submit</button>
         </form>
     </div>
-</section>
+</section> -->
+<div class="login">
+  <h1>Login Admin</h1>
+  <form action="">
+    <div class="form-group">
+     <label for="username">Username</label> 
+     <input type="username" id="username">
+    </div>
+    <div class="form-group">
+     <label for="password">Password</label> 
+     <input type="password" id="pasword">
+    </div>
+    <div class="form-group">
+      <input type="checkbox" id="check">
+      <label for="check">Remember me</label>
+    </div>
+    <input type="submit" value="SIGN IN">
+  </form>
+</div>
