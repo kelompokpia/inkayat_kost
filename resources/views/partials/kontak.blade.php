@@ -1,8 +1,9 @@
+@extends('layout.template')
 <section>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-9">
-                <div class="card" style="background-color: #FF7999; border:0; border-radius:15px">
+                <div class="card" style="background-color: #AA8B56; border:0; border-radius:15px">
                     <div class="row" style="height: 1rem"></div>
                     <div class="row">
                         <div class="col-md-4 text-center">
@@ -12,7 +13,7 @@
                         <div class="col-md-6">
                             <div class="card-body" style="margin: 1.5rem 0 1.5rem 1rem;">
                                 <h2 class="card-title" style="font-weight: 700; color: black; font-family: 'Roboto', sans-serif;">Tunggu apa lagi?! Yuk mengekos di Inkayat sekarang juga!</h2>
-                                <a href="https://wa.me/089657232951?text=Percobaan%20yang%20mantap!" target="_blank" class="btn btn-light"><i class="bi bi-whatsapp"></i> Kirim Pesan</a>
+                                <a href="https://wa.me/0895321638507?text=Percobaan%20yang%20mantap!" target="_blank" class="btn btn-light"><i class="bi bi-whatsapp"></i> Kirim Pesan</a>
                             </div>
                         </div>
                     <div class="row" style="height: 1rem"></div>

@@ -3,8 +3,8 @@
 // use App\Models\Post;
 use App\Models\Kamar;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\login;
 use Illuminate\Support\Facades\Route;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('Login.index_login');
-});
+Route::get('/sesi',[App\Http\Controllers\login::class,'index']);
+Route::post('/sesi/login',[App\Http\Controllers\login::class,'login']);
 
 Route::resource('index', App\Http\Controllers\kostController::class);

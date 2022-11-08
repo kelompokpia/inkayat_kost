@@ -1,5 +1,5 @@
-@extends('layout.template');
-@section('konten')
+@extends('layout.template')
+@section('konten');
 <nav class="navbar navbar-expand-lg navbar-dark shadow-lg fixed-top" style="background-color: #dbd9a1">
     <div class="container">
       <a class="navbar-brand text-black" href="#">INKAYAT KOST</a>
@@ -15,9 +15,7 @@
             <a class="nav-link btn text-dark" href="#kamar">Kamar</a>
           </li>
           <li class="nav-item">
-            <a href="/login">
-            <button class="nav-link btn text-light btn-dark" href="#services">Login Admin</button>
-            </a>
+            <a class="nav-link btn text-light btn-dark" href="{{ url('login') }}">Login Admin</a>
           </li>
         </ul>
       </div>

@@ -1,3 +1,4 @@
+@extends('layout.template')
 <section id="kamar" class="py-5">
     <div class="container-lg">
       <div class="row justify-content-center">
@@ -16,10 +17,10 @@
                 <div class="{{ ($kamar["status_kamar"]==="Terisi") ? 'kamar-status-terisi': 'kamar-status' }}">{{ $kamar["status_kamar"] }} &#8226; IDR{{ $kamar["harga_kamar"] }}K</div>
                 <h5 class="card-title">{{ $kamar["nama_kamar"] }}</h5>
                 <p class="card-text">{{ $kamar["deskripsi_kamar"] }}</p>
-                <a href="https://wa.me/089657232951?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn {{ ($kamar["status_kamar"]==="Terisi") ? 'disabled':'' }}" style="background-color: #FF7999;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
+                <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn {{ ($kamar["status_kamar"]==="Terisi") ? 'disabled':'' }}" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
               </div>
             </div>
         </div>
         @endforeach
-    </div>
+    </div
   </section>
