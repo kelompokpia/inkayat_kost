@@ -18,20 +18,29 @@
     </div>
 </section> -->
 <div class="login">
-  <h1>Login Admin</h1>
-  <form action="">
-    <div class="form-group">
-     <label for="username">Username</label> 
-     <input type="username" id="username">
+  <h1>class="text-center">Login Admin</h1>
+
+  <form class="needs-validation">
+
+    <div class="form-group was-validated">
+     <label class= "form-label" for="username">Username</label> 
+     <input class="form-control" type="username" id="username" required>
+     <div class="invalid-feedback">
+      Tolong Masukkan Username
+     </div>
     </div>
-    <div class="form-group">
-     <label for="password">Password</label> 
-     <input type="password" id="pasword">
+
+    <div class="form-group was-validated">
+     <label class= "form-label" for="password">Password</label> 
+     <input class="form-control" type="password" id="pasword" required>
+     <div class="invalid-feedback">
+      Tolong Masukkan Password
+     </div>
     </div>
-    <div class="form-group">
-      <input type="checkbox" id="check">
-      <label for="check">Remember me</label>
+    <div class="form-group form-check">
+      <input class= "form-check-input"type="checkbox" id="check">
+      <label class= "form-check-label" for="check">Remember me</label>
     </div>
-    <input type="submit" value="SIGN IN">
+    <input class="btn btn-success w-100" type="submit" value="SIGN IN">
   </form>
 </div>
