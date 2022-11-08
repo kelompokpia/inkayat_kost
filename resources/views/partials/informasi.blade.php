@@ -21,7 +21,7 @@
                     </div>
                     <div class="text ms-3">
                         <h3 class="fs-5">Email</h3>
-                        <p class="text-muted">example@gmail.com</p>
+                        <p class="text-muted">inkayatkost@gmail.com</p>
                     </div>
                 </div>
                 <div class="contact-item d-flex mb-3">
@@ -30,7 +30,7 @@
                     </div>
                     <div class="text ms-3">
                         <h3 class="fs-5">Phone</h3>
-                        <p class="text-muted">082242478858</p>
+                        <p class="text-muted">0895321638507</p>
                     </div>
                 </div>
                 <div class="contact-item d-flex">
@@ -38,8 +38,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
                     <div class="text ms-3">
-                        <h3 class="fs-5">Visit Office</h3>
-                        <p class="text-muted">Demak</p>
+                        <h3 class="fs-5">Alamat</h3>
+                        <p class="text-muted">Sengon Bugel, RT 03/RW 03 Mayong, Jepara, Jawa Tengah</p>
                     </div>
                 </div>
             </div>
