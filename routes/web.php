@@ -5,6 +5,10 @@ use App\Models\Kamar;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\login;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\kostController;
+use Illuminate\Contracts\Session\Session;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sesi',[App\Http\Controllers\login::class,'index']);
-Route::post('/sesi/login',[App\Http\Controllers\login::class,'login']);
+Route::get('/login',[App\Http\Controllers\login::class,'index']);
+Route::post('/Admin/dasbord',[App\Http\Controllers\login::class,'login']);
 
 Route::resource('index', App\Http\Controllers\kostController::class);
+

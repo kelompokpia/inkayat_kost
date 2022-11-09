@@ -1,19 +1,21 @@
 @extends('layout.template')
-<section class="d-flex h-100 w-100 justify-content-center align-items-center" style="background-color: #dbd9a1">
-    <div class="d-flex w-25 h-50 rounded-5 border border-dark border-5 justify-content-center align-items-center">
-        <form>
-            <div>
-                <h3 class="text-center mb-4">Login Admin</h3>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-dark text-light w-100 ">Submit</button>
+@section('login')
+<div class="w-50 center border rounded px-3 py-3 mx-auto">
+  <h1>LOGIN</h1>
+  <form action="/Admin/dasbord" method="post">
+      @csrf
+      <div class="mb-3">
+          <label for="name" class="form-label">Emaillabel</label>
+          <input type="text" name="name" value="{{ Session::get('name') }}"  class="form-control">
+      </div>
+      <div class="mb-3">
+          <label for="password" class="form-label">Passwordlabel</label>
+          <input type="password" name="password" class="form-control">
+      </div>
+      <div class="mb-3 d-grid">
+          <button type="submit" name="submit" class="btn btn-primary">LOGIN</button>
+          </div>
         </form>
-    </div>
-</section>
+      </div>
+@endsection
+
