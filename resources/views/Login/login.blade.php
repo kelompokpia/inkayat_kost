@@ -4,18 +4,18 @@
   <h1>LOGIN</h1>
   <form action="/Admin/dasbord" method="post">
       @csrf
-      <div class="mb-3">
+            <div class="mb-3">
           <label for="name" class="form-label">Emaillabel</label>
           <input type="text" name="name" value="{{ Session::get('name') }}"  class="form-control">
-      </div>
-      <div class="mb-3">
+            </div>
+            <div class="mb-3">
           <label for="password" class="form-label">Passwordlabel</label>
           <input type="password" name="password" class="form-control">
-      </div>
+            </div>
       <div class="mb-3 d-grid">
           <button type="submit" name="submit" class="btn btn-primary">LOGIN</button>
           </div>
         </form>
-      </div>
+    </div>
 @endsection
 
