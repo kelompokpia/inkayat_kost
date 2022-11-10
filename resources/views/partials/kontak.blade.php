@@ -1,6 +1,6 @@
 @extends('layout.template')
 <section>
-    <div class="container">
+    <div class="container-lg">
         <div class="row justify-content-center">
             <div class="col-9">
                 <div class="card" style="background-color: #AA8B56; border:0; border-radius:15px">

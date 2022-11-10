@@ -7,7 +7,7 @@
                 <h2 class="fw-bold mt-4">KAMAR</h2>
             </div>
         </div>
-    </div>
+      </div>
       <div class="row justify-content-center">
         @foreach ($kamar as $kamar)
         <div class="col-md-3 col-6">
@@ -22,5 +22,5 @@
             </div>
         </div>
         @endforeach
-    </div
-  </section>
+      </div>
+</section>

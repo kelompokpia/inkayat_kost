@@ -1,34 +1,32 @@
-*{
-    margiin: 0;
-    padding: 0;
+* {
     box-sizing: border-box;
 }
 
-body{
+body {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #dbd9a1;
 }
-.login{
+.login {
     width: 360px;
     height: min-content;
     padding: 20px;
     border-radius: 12px;
     background-color: #dbd9a1;
 }
-.login h1{
+.login h1 {
     font-size: 36px;
     margin-bottom: 25px;
 }
 .login form {
     font-size: 20px;
 }
-.login form .form-group{
+.login form .form-group {
     margin-bottom: 12px;
 }
-.login form input[type="submit"]{
+.login form input[type="submit"] {
     font-size: 20px;
     margin-top: 15px;
 }

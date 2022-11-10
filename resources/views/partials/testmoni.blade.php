@@ -3,14 +3,13 @@
         <div class="row pt-4 pb-4">
             <div class="col-md-8 ps-4">
                 <h3>Hubungi kami</h3>
-                <h5>Inkayat Kost</h5>
-                <div><i class="bi bi-geo-alt"></i> &nbsp;Sengonbugel Rt.3 Rw.3, Mayong, Jepara - 59465</div>
-                <div><i class="bi bi-telephone"></i> &nbsp;0897656334289</div>
-                <div><i class="bi bi-envelope"></i> &nbsp;inkayat-kost@gmail.com</div><br>
+                <i class="bi bi-geo-alt">Sengonbugel Rt.3 Rw.3, Mayong, Jepara - 59465</i>
+                <i class="bi bi-telephone">0897656334289</i>
+                <i class="bi bi-envelope">inkayat-kost@gmail.com</i>
                 <div style="margin-bottom: 1rem;">
-                    <a href="#" class="index-medsos" title="Hubungi Inkayat Kost via Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>&nbsp;
-                    <a href="#" class="index-medsos" title="Kunjungi Facebook Inkayat Kost" target="_blank"><i class="bi bi-facebook"></i></a>&nbsp;
-                    <a href="#" class="index-medsos" title="Kunjungi Instagram Inkayat Kost" target="_blank"><i class="bi bi-instagram"></i></a>&nbsp;
+                    <a href="#" class="index-medsos" title="Hubungi Inkayat Kost via Whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="index-medsos" title="Kunjungi Facebook Inkayat Kost" target="_blank"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="index-medsos" title="Kunjungi Instagram Inkayat Kost" target="_blank"><i class="bi bi-instagram"></i></a>
                 </div>
             </div>
             <div class="col-md-4">
