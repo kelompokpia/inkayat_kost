@@ -7,3 +7,6 @@ sesuai urutan
 -php artisan ui bootstrap
 -npm install
 -npm run dev
+
+ikuti sampai npm install saja
+https://codingrakitan.blogspot.com/2020/08/cara-membuat-project-baru-node-js.html
