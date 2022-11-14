@@ -25,8 +25,8 @@ use Illuminate\Contracts\Session\Session;
 //     return view('portofolio.index');
 // });
 
-Route::get('/login',[App\Http\Controllers\login::class,'index']);
-Route::post('/Admin/dasbord',[App\Http\Controllers\login::class,'login']);
+Route::get('/login', [App\Http\Controllers\login::class, 'index']);
+Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
 
 Route::resource('/', App\Http\Controllers\kostController::class);
 
