@@ -21,12 +21,16 @@ use Illuminate\Contracts\Session\Session;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('portofolio.index');
+// });
 
 Route::get('/login',[App\Http\Controllers\login::class,'index']);
 Route::post('/Admin/dasbord',[App\Http\Controllers\login::class,'login']);
 
-Route::resource('index', App\Http\Controllers\kostController::class);
+Route::resource('/', App\Http\Controllers\kostController::class);
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
