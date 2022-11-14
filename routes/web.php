@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
-use App\Http\Controllers\DatakamarController;
+use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use Illuminate\Contracts\Session\Session;
@@ -41,4 +41,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
-Route::get('/datakamar', [DatakamarController::class, 'show'])->name('Datakamar');
+Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
