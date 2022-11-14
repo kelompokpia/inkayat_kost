@@ -2,10 +2,13 @@
 
 // use App\Models\Post;
 use App\Models\Kamar;
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\login;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
+use App\Http\Controllers\PembayaranController;
 use Illuminate\Contracts\Session\Session;
 
 
@@ -30,7 +33,7 @@ Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
 
 Route::resource('/', App\Http\Controllers\kostController::class);
 
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
