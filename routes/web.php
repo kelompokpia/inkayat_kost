@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
+use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use Illuminate\Contracts\Session\Session;
 
@@ -32,6 +33,8 @@ Route::get('/login', [App\Http\Controllers\login::class, 'index']);
 Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
 
 Route::resource('/', App\Http\Controllers\kostController::class);
+Route::resource('/pengaturan', App\Http\Controllers\pengaturanController::class);
+
 
 Auth::routes();
 
