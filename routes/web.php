@@ -11,6 +11,7 @@ use App\Http\Controllers\kostController;
 use App\Http\Controllers\kamarController;
 use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\TahunController;
 use Illuminate\Contracts\Session\Session;
 
 
@@ -40,5 +41,6 @@ Route::resource('/pengaturan', App\Http\Controllers\pengaturanController::class)
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
 Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
+Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
+Route::get('/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
