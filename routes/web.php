@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
 use App\Http\Controllers\kamarController;
-use App\Http\Controllers\pengaturanController;
+// use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use Illuminate\Contracts\Session\Session;
 
