@@ -13,7 +13,7 @@ class pengaturanController extends Controller
      */
     public function index()
     {
-        return view(pengaturan.pengaturan);
+        return view('pengaturan.pengaturan');
     }
 
     /**
