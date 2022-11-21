@@ -22,7 +22,7 @@
   <div class="container-lg py-5">
     <div class="row">
       <div class="col-lg-10">
-        <h2 class="fw-bold mb-2">Data Admin</h2>
+        <h2 class="fw-bold mb-2">Ubah Data Admin</h2>
       </div>
       <div class="col-lg-2">
         <a class="text-decoration-none btn btn-dark  justify-content-center" href="{{ route('register') }}">{{ __('Register') }}</a>
