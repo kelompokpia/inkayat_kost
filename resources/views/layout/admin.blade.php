@@ -28,7 +28,14 @@
                 <a class="nav-link btn text-light btn-dark mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars"></i></a>
               </li>
               <li>
-                <a class="nav-link btn text-light btn-dark" href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a class="nav-link btn text-light btn-dark" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 <i class="fa-solid fa-right-from-bracket"></i>
+             </a>
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
               </li>
             </ul>
           </div>
