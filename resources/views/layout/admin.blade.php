@@ -42,16 +42,16 @@
       </div>
       <div class="offcanvas-body">
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Home</a>
+          <a href="{{url('home')}}" class="text-decoration-none btn btn-dark w-75">Home</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
+          <a href="{{url('pembayaran')}}" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
+          <a href="{{url('datakamar')}}" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Pengaturan</a>
+          <a href="{{url('pengaturan')}}" class="text-decoration-none btn btn-dark w-75">Pengaturan</a>
         </ul>
       </div>
     </div>
