@@ -28,7 +28,14 @@
                 <a class="nav-link btn text-light btn-dark mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars"></i></a>
               </li>
               <li>
-                <a class="nav-link btn text-light btn-dark" href="{{ route('logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
+                <a class="nav-link btn text-light btn-dark" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                 <i class="fa-solid fa-right-from-bracket"></i>
+             </a>
+             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                 @csrf
+             </form>
               </li>
             </ul>
           </div>
@@ -42,16 +49,16 @@
       </div>
       <div class="offcanvas-body">
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Home</a>
+          <a href="{{url('home')}}" class="text-decoration-none btn btn-dark w-75">Home</a>
         </ul>
         <ul>
           <a href="/home/pembayaran" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
+          <a href="{{url('datakamar')}}" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Pengaturan</a>
+          <a href="{{url('pengaturan')}}" class="text-decoration-none btn btn-dark w-75">Pengaturan</a>
         </ul>
       </div>
     </div>

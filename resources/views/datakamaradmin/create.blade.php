@@ -1,4 +1,4 @@
-@extends('Admin.dasbord')
+@extends('layout.admin')
 
 @section('content')
 <section>
