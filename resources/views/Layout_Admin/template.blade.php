@@ -45,7 +45,7 @@
           <a href="" class="text-decoration-none btn btn-dark w-75">Home</a>
         </ul>
         <ul>
-          <a href="" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
+          <a href="/home/pembayaran" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
         </ul>
         <ul>
           <a href="" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
