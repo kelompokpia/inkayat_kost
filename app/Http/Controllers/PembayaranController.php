@@ -17,6 +17,11 @@ class PembayaranController extends Controller
         ]);
     }
 
+    public function edit()
+    {
+        return view('datapembayaran.edit-pembayaran');
+    }
+
     public function tahun()
     {
         return view('datapembayaran.detail-pembayaran', [

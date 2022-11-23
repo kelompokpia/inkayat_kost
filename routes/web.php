@@ -48,3 +48,4 @@ Route::get('/home/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun
 Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
 Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
 Route::get('/home/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
+Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
