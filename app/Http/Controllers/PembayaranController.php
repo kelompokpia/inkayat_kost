@@ -24,4 +24,9 @@ class PembayaranController extends Controller
             'tahuns' => Tahun::all(),
         ]);
     }
+
+    public function tambahPembayaran()
+    {
+        return view('datapembayaran.tambah-pembayaran');
+    }
 }
