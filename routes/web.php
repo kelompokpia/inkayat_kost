@@ -42,6 +42,9 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
-Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
-Route::get('/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
+Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
+Route::get('/home/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
+
+Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
+Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
 Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
