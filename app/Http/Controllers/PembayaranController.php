@@ -17,11 +17,21 @@ class PembayaranController extends Controller
         ]);
     }
 
+    public function edit()
+    {
+        return view('datapembayaran.edit-pembayaran');
+    }
+
     public function tahun()
     {
         return view('datapembayaran.detail-pembayaran', [
             'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
         ]);
+    }
+
+    public function tambahPembayaran()
+    {
+        return view('datapembayaran.tambah-pembayaran');
     }
 }

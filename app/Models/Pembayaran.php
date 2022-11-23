@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Kamar;
+use App\Models\Tahun;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

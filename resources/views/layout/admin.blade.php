@@ -52,7 +52,7 @@
           <a href="{{url('home')}}" class="text-decoration-none btn btn-dark w-75">Home</a>
         </ul>
         <ul>
-          <a href="{{url('pembayaran')}}" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
+          <a href="/home/pembayaran" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
         </ul>
         <ul>
           <a href="{{url('datakamar')}}" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
