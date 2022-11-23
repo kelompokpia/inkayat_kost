@@ -44,3 +44,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
 Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
 Route::get('/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
+Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
