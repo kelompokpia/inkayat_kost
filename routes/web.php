@@ -31,21 +31,23 @@ use Illuminate\Contracts\Session\Session;
 //     return view('portofolio.index');
 // });
 
-Route::get('/login', [App\Http\Controllers\login::class, 'index']);
-Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
+
 
 Route::resource('/', App\Http\Controllers\kostController::class);
-Route::resource('/pengaturan', App\Http\Controllers\pengaturanController::class);
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/login', [App\Http\Controllers\login::class, 'index']);
+    Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('home/datakamar', [kamarController::class, 'show'])->name('Datakamar');
+    Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
+    Route::get('/home/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
+    Route::resource('home/pengaturan', App\Http\Controllers\pengaturanController::class);
+    Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
+    Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
+    Route::get('/home/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
+    Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
+});
 
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
-Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
-Route::get('/home/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
-
-Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
-Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
-Route::get('/home/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
-Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
