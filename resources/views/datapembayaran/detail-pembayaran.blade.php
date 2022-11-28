@@ -10,7 +10,7 @@ $lastChar = substr(Request::url(), -4);
     <div class="container">
         <div class="row justify-content-center mb-4">
             <div class="col-11">
-                <h1>Data Pembayaran Kost {{ $lastChar }}</h1>
+                <h1>Data Pembayaran Kost</h1>
             </div>
         </div>
 
@@ -23,9 +23,9 @@ $lastChar = substr(Request::url(), -4);
           </div>
           <div class="col-9">
             <select class="form-select pt-2 pb-2" name="links" onchange="window.location.href=this.value;" aria-label="Default select example">
-              <option>Pilih Tahun...</option>
+              <option value="">Pilih Tahun...</option>
               @foreach ($tahuns as $tahun)
-                <option value="/home/pembayaran/{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
+                <option value="/home/pembayaran/tahun/{{ $tahun->tahun }}" {{ ($tahun->tahun===$lastChar)? 'selected':'' }}>{{ $tahun->tahun }}</option>
               @endforeach
             </select>
           </div>
@@ -70,18 +70,18 @@ $lastChar = substr(Request::url(), -4);
                                     <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
                                     <td class="text-center">Tgl. {!! substr($pembayaran->kamar->tanggal_masuk, -2) !!}</td>
                                     <td>{{ $pembayaran->kamar->harga_kamar }}K</td>
-                                    <td class="fs-3">@if ($pembayaran->jan === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jan === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->feb === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->feb === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->mar === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->mar === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->apr === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->apr === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->mei === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->mei === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->jun === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jun === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->jul === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jul === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->aug === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->ags === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->sep === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->sep === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->okt === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->okt === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->nov === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->nov === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
-                                    <td class="fs-3">@if ($pembayaran->des === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->des === 'Belum Lunas') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->jan === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jan === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->feb === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->feb === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->mar === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->mar === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->apr === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->apr === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->mei === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->mei === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->jun === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jun === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->jul === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jul === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->ags === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->ags === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->sep === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->sep === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->okt === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->okt === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->nov === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->nov === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
+                                    <td class="fs-3">@if ($pembayaran->des === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->des === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
                                     <td class="fs-5">
                                     <div class="dropdown">
                                         <div class="btn text-dark mt-2" style="background-color: transparent; border:0; padding:0;" data-bs-toggle="dropdown" aria-expanded="false">
@@ -99,6 +99,7 @@ $lastChar = substr(Request::url(), -4);
                         @endforeach
                     </tbody>
                   </table>
+                  <div class="text-center"><a href="/home/pembayaran/tambah-pembayaran"><button class="btn btn-primary mt-3">Tambah data pembayaran <i class="bi bi-plus-square"></i></button></a></div>
             </div>
         </div>
     </div>

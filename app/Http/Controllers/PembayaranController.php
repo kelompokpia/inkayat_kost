@@ -17,6 +17,27 @@ class PembayaranController extends Controller
         ]);
     }
 
+    public function tambahPembayaran()
+    {
+        return view('datapembayaran.tambah-pembayaran', [
+            'kamars' => Kamar::all(),
+            'tahuns' => Tahun::all()
+        ]);
+    }
+
+    public function index()
+    {
+        return view('datapembayaran.tambah-pembayaran', [
+            'kamars' => Kamar::all(),
+            'tahuns' => Tahun::all()
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        return $request;
+    }
+
     public function edit()
     {
         return view('datapembayaran.edit-pembayaran');
@@ -28,10 +49,5 @@ class PembayaranController extends Controller
             'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
         ]);
-    }
-
-    public function tambahPembayaran()
-    {
-        return view('datapembayaran.tambah-pembayaran');
     }
 }

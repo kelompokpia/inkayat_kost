@@ -12,6 +12,7 @@ use App\Http\Controllers\kamarController;
 // use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\TahunController;
+use App\Http\Controllers\tambahpembayaran;
 use Illuminate\Contracts\Session\Session;
 
 
@@ -43,9 +44,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
 Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
-Route::get('/home/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
-
+Route::get('/home/pembayaran/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
+Route::resource('/home/pembayaran/tambah-pembayaran', PembayaranController::class)->middleware('auth');
+Route::get('/home/pembayaran/tahun/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
 Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
 Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
-Route::get('/home/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
 Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);

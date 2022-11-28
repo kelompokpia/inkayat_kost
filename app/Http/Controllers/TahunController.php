@@ -18,7 +18,7 @@ class TahunController extends Controller
 
         Tahun::create($validatedData);
 
-        return redirect('/home/pembayaran')->with('success', 'Berhasil menambahkan tahun ke database.');
+        return redirect('/home/pembayaran')->with('success', 'Tahun berhasil ditambahkan ke database.');
     }
 
     public function index()

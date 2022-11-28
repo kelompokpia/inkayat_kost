@@ -25,7 +25,7 @@ $lastChar = substr(Request::url(), -4);
             <select class="form-select pt-2 pb-2" name="links" onchange="window.location.href=this.value;" aria-label="Default select example">
               <option>Pilih Tahun...</option>
               @foreach ($tahuns as $tahun)
-                <option value="/home/pembayaran/{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
+                <option value="/home/pembayaran/tahun/{{ $tahun->tahun }}">{{ $tahun->tahun }}</option>
               @endforeach
             </select>
           </div>
