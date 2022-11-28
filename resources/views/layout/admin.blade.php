@@ -12,59 +12,103 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href={{ asset('fontawesome6.2.0/css/all.min.css') }} />
-    {{-- <link rel="stylesheet" href="login/style.css"> --}}
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/jqvmap/jqvmap.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.css">
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css" >
   </head>
-  <body style = "font-family: 'Secular One', sans-serif;" class="bg-white ">
+  <body style = "font-family: 'Secular One', sans-serif;" class=" hold-transition sidebar-mini layout-fixed">
     <main>
-      <nav class="navbar navbar-expand-lg navbar-dark shadow-lg fixed-top " style="background-color: #697631">
-        <div class="container-fluid">
-          <a class="navbar-brand text-black" href="#">ADMIN INKAYAT KOST</a>
-          <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li>
-                <a class="nav-link btn text-light btn-dark mx-2" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="fa-solid fa-bars"></i></a>
+      <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #dbd9a1">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          </li>
+          <li class="nav-item d-none d-inline-block">
+            <a href="#" class="nav-link text-dark">Admin Inkayat Kost</a>
+          </li>
+        </ul>
+      </nav>
+    <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #dbd9a1">
+        <!-- Brand Logo -->
+        {{-- <img src="{{ asset('img/logo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 w-25" style="opacity: .8;"> --}}
+        <h3 class="brand-text font-weight-light mt-3 mx-1">Menu Admin</h3>
+        <hr>
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <li class="nav-item">
+                <a href="{{url('home')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-house"></i>
+                  <p>
+                    Home
+                  </p>
+                </a>
               </li>
-              <li>
-                <a class="nav-link btn text-light btn-dark" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                              document.getElementById('logout-form').submit();">
-                 <i class="fa-solid fa-right-from-bracket"></i>
-             </a>
-             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                 @csrf
-             </form>
+              <li class="nav-item">
+                <a href="{{url('home/pembayaran')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-money-bills"></i>
+                  <p>
+                    Pembayaran
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('home/datakamar')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-bed"></i>
+                  <p>
+                    Data Kamar
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('home/pengaturan')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-gears"></i>
+                  <p>
+                    Pengaturan
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('logout') }}" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                  <i class="nav-icon fa-solid fa-right-from-bracket"></i>
+                  <p>
+                    Keluar
+                  </p>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
-    </nav>
-    <section>
-      <div class="offcanvas offcanvas-start" style="background-color: #697631" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu Admin</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul>
-          <a href="{{url('home')}}" class="text-decoration-none btn btn-dark w-75">Home</a>
-        </ul>
-        <ul>
-          <a href="/home/pembayaran" class="text-decoration-none btn btn-dark w-75">Pembayaran</a>
-        </ul>
-        <ul>
-          <a href="{{url('datakamar')}}" class="text-decoration-none btn btn-dark w-75">Data Kamar</a>
-        </ul>
-        <ul>
-          <a href="{{url('pengaturan')}}" class="text-decoration-none btn btn-dark w-75">Pengaturan</a>
-        </ul>
-      </div>
-    </div>
-    </section>
+    </aside>
         @yield('content')
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/jquery/jquery.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script>
+    $.widget.bridge('uibutton', $.ui.button)
+  </script>
+  <script src="{{ asset('adminLTE') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/chart.js/Chart.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/sparklines/sparkline.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/jqvmap/jquery.vmap.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/jquery-knob/jquery.knob.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/moment/moment.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/daterangepicker/daterangepicker.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+  <script src="{{ asset('adminLTE') }}/dist/js/adminlte.js"></script>
+  
   </body>
 </html>

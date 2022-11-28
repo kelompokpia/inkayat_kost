@@ -1,12 +1,12 @@
 @extends('layout.login')
 
 @section('content')
-<section class="d-flex w-100 align-items-center bg-success" style="height: 100vh">
+<section class="d-flex w-100 align-items-center" style="height: 100vh; background-color: #dbd9a1">
     <div class="container-lg">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header text-center">{{ __('LOGIN') }}</div>
+                    <div class="card-header text-center fs-3">{{ __('LOGIN') }}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -35,22 +35,9 @@
                                     @enderror
                                 </div>
                             </div>
-    
-                            <div class="row mb-3">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-    
-                                        <label class="form-check-label" for="remember">
-                                            {{ __('Remember Me') }}
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="row mb-0">
+                            <div class="row">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-success">
+                                    <button type="submit" class="btn w-50" style="background-color: #dbd9a1">
                                         {{ __('Login') }}
                                     </button>
                                 </div>
