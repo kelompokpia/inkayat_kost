@@ -11,7 +11,7 @@
         <div class="modal-body">
             <div class="mb-3">
                 <label for="tahun">Tahun</label>
-                <input type="number" class="form-control" id="tahun" name="tahun" maxlength="4" minlength="4" required value="{{ old('tahun') }}" placeholder="Masukkan tahun..">
+                <input type="number" class="form-control" id="tahun" name="tahun" maxlength="4" minlength="4" min="2000" required value="{{ old('tahun') }}" placeholder="Masukkan tahun..">
                 @error('tahun')
               <div class="invalid-feed">
                 {{ $message }}

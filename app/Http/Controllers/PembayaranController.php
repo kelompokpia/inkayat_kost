@@ -35,7 +35,25 @@ class PembayaranController extends Controller
 
     public function store(Request $request)
     {
-        return $request;
+        $validatedData = $request->validate([
+            'id_kamar' => 'required',
+            'tahun' => 'required',
+            'jan' => '',
+            'feb' => '',
+            'mar' => '',
+            'apr' => '',
+            'mei' => '',
+            'jun' => '',
+            'jul' => '',
+            'ags' => '',
+            'sep' => '',
+            'okt' => '',
+            'nov' => '',
+            'des' => ''
+        ]);
+
+        Pembayaran::create($validatedData);
+        return redirect('/home/pembayaran')->with('success', 'Kamar berhasil dibuat');
     }
 
     public function edit()

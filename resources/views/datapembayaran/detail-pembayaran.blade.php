@@ -1,10 +1,9 @@
 @extends('layout.admin')
-
-@section('content')
-
 <?php
 $lastChar = substr(Request::url(), -4);
 ?>
+
+@section('content')
 
 <section class="mt-5">
     <div class="container">
@@ -40,7 +39,7 @@ $lastChar = substr(Request::url(), -4);
                 <table class="table table-striped table-hover">
                     <thead>
                       <tr class="text-center">
-                        <th scope="col">No</th>
+                        {{-- <th scope="col">No</th> --}}
                         <th scope="col">Kamar</th>
                         <th scope="col">Penghuni</th>
                         <th scope="col">Jatuh Tempo</th>
@@ -65,7 +64,7 @@ $lastChar = substr(Request::url(), -4);
                         @foreach ($pembayarans as $pembayaran)
                             @if ($pembayaran->tahun == $lastChar)
                                 <tr>
-                                    <th scope="row">{{ $pembayaran->kamar->id }}</th>
+                                    {{-- <th scope="row">{{ $pembayaran->kamar->id }}</th> --}}
                                     <td>{{ $pembayaran->kamar->nama_kamar }}</td>
                                     <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
                                     <td class="text-center">Tgl. {!! substr($pembayaran->kamar->tanggal_masuk, -2) !!}</td>

@@ -11,6 +11,10 @@ class Pembayaran extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id_kamar', 'tahun', 'jan', 'feb', 'mar', 'apr', 'mei', 'jun', 'jul', 'ags', 'sep', 'okt', 'nov', 'des'];
+    protected $guarded = ['id'];
+    protected $table = 'pembayarans';
+
     public function kamar()
     {
         return $this->belongsTo(Kamar::class, 'id_kamar');

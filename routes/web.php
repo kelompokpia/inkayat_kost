@@ -45,9 +45,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home/pembayaran/tahun/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
     Route::resource('home/pengaturan', App\Http\Controllers\pengaturanController::class);
     Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
-    Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
     Route::get('/home/pembayaran/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
-    Route::resource('/home/pembayaran/tambah-pembayaran', PembayaranController::class)->middleware('auth');
+    Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
+    Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
     Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
 });
 
