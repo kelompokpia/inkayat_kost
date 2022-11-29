@@ -13,18 +13,20 @@ return new class extends Migration
      */
     public function up()
     {
-        // Schema::create('kamars', function (Blueprint $table) {
-        //     $table->string('nama_kamar');
-        //     $table->string('slug');
-        //     $table->string('nama_penghuni');
-        //     $table->integer('nik_penghuni');
-        //     $table->unique('nik_penghuni');
-        //     $table->integer('telepon_penghuni');
-        //     $table->date('tanggal_masuk');
-        //     $table->string('status_kamar');
-        //     $table->integer('harga_kamar');
-        //     $table->text('deskripsi_kamar');
-        // });
+        Schema::create('kamars', function (Blueprint $table) {
+            $table->integer('id')->unique()->autoIncrement();
+            $table->string('nama_kamar');
+            $table->string('gambar_kamar');
+            $table->string('nama_penghuni');
+            $table->bigInteger('nik_penghuni')->unique();
+            $table->bigInteger('telepon_penghuni')->unique();
+            $table->date('tanggal_masuk');
+            $table->string('status_kamar');
+            $table->integer('harga_kamar');
+            $table->text('deskripsi_kamar');
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+        });
     }
 
     /**

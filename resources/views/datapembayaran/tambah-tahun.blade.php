@@ -1,6 +1,6 @@
   <!-- Modal -->
   <div class="modal fade" id="tambahTahun" tabindex="-1" aria-labelledby="tambahTahunLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="tambahTahunLabel">Tambah tahun</h1>
@@ -11,7 +11,7 @@
         <div class="modal-body">
             <div class="mb-3">
                 <label for="tahun">Tahun</label>
-                <input type="number" class="form-control" id="tahun" name="tahun" maxlength="4" minlength="4" min="2000" required value="{{ old('tahun') }}" placeholder="Masukkan tahun..">
+                <input type="number" class="form-control" id="tahun" name="tahun" maxlength="4" minlength="4" min="2000" required value="{{ old('tahun') }}" @error('tahun') is-invalid @enderror placeholder="Masukkan tahun..">
                 @error('tahun')
               <div class="invalid-feed">
                 {{ $message }}

@@ -66,6 +66,7 @@ class PembayaranController extends Controller
         return view('datapembayaran.detail-pembayaran', [
             'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
+            'kamars' => Kamar::all()
         ]);
     }
 }

@@ -154,7 +154,7 @@ $link = $_SERVER['HTTP_REFERER'];
                               </select>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary w">Simpan</button>
+                    <button type="submit" class="btn btn-primary" style="width: 90px">Simpan</button>
                 </form>
             </div>
         </div>

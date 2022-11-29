@@ -43,7 +43,7 @@ $lastChar = substr(Request::url(), -4);
                         <th scope="col">Kamar</th>
                         <th scope="col">Penghuni</th>
                         <th scope="col">Jatuh Tempo</th>
-                        <th scope="col">Bayar</th>
+                        {{-- <th scope="col">Bayar</th> --}}
                         <th scope="col">Jan</th>
                         <th scope="col">Feb</th>
                         <th scope="col">Mar</th>
@@ -68,7 +68,7 @@ $lastChar = substr(Request::url(), -4);
                                     <td>{{ $pembayaran->kamar->nama_kamar }}</td>
                                     <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
                                     <td class="text-center">Tgl. {!! substr($pembayaran->kamar->tanggal_masuk, -2) !!}</td>
-                                    <td>{{ $pembayaran->kamar->harga_kamar }}K</td>
+                                    {{-- <td>{{ $pembayaran->kamar->harga_kamar }}K</td> --}}
                                     <td class="fs-3">@if ($pembayaran->jan === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->jan === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
                                     <td class="fs-3">@if ($pembayaran->feb === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->feb === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>
                                     <td class="fs-3">@if ($pembayaran->mar === 'Lunas')<i class="bi bi-check text-success"></i> @elseif ($pembayaran->mar === 'Belum bayar') <i class="bi bi-x text-danger"></i> @else <i class="bi bi-dot" style="color: #868686; font-size:2rem;"></i> @endif</td>

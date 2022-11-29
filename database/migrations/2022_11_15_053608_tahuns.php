@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('tahuns', function (Blueprint $table) {
-            $table->year('tahun');
-            $table->string('slug');
+            $table->year('tahun')->unique();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

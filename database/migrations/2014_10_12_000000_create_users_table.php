@@ -15,16 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_kamar')->unique();
-            $table->string('gambar_kamar');
-            $table->string('nama_penghuni');
-            $table->integer('nik_penghuni');
-            $table->bigInteger('telepon_penghuni');
-            $table->date('tanggal_masuk');
-            $table->text('deskripsi_kamar');
-            $table->string('status_kamar');
-            $table->integer('harga_kamar');
-            $table->timestamps();
+            $table->string('name');
+            $table->string('email');
+            $table->timestamp('email_verified_at');
+            $table->string('password');
+            $table->string('remember_token');
+            $table->timestamp('created_at');
+            $table->timestamp('updated_at');
         });
     }
 

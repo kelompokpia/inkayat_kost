@@ -20,6 +20,9 @@ $lastChar = substr(Request::url(), -4);
             @if (session()->has('success'))
               <div class="alert alert-success" role="alert">{{ session('success') }}</div>
             @endif
+            @if (session()->has('failed'))
+              <div class="alert alert-success" role="alert">{{ session('failed') }}</div>
+            @endif
           </div>
           <div class="col-9">
             <select class="form-select pt-2 pb-2" name="links" onchange="window.location.href=this.value;" aria-label="Default select example">
