@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 namespace App\Http\Controllers;
 
@@ -11,4 +11,4 @@ class kamarcontroller extends Controller
     {
     return view('datakamaradmin.data_kamar');
     }
-}
+} -->

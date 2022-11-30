@@ -8,10 +8,11 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
-use App\Http\Controllers\kamarController;
+// use App\Http\Controllers\kamarController;
 // use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\TahunController;
+// use App\Http\Controllers\controlkamar;
 use Illuminate\Contracts\Session\Session;
 
 
@@ -36,11 +37,13 @@ Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
 
 Route::resource('/', App\Http\Controllers\kostController::class);
 Route::resource('/pengaturan', App\Http\Controllers\pengaturanController::class);
-
+Route::resource('/dashboard/posts', App\Http\Controllers\DashboardPostController::class);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/datakamar', [kamarController::class, 'show'])->name('Datakamar');
+Route::resource('datakamar', App\Http\Controllers\controlkamar::class );
+// Route::get('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
+// Route::post('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
 Route::get('/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
 Route::get('/pembayaran/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
