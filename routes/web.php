@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\kostController;
-use App\Http\Controllers\kamarController;
-// use App\Http\Controllers\pengaturanController;
+use App\Http\Controllers\controlkamar;
+use App\Http\Controllers\pengaturanController;
 use App\Http\Controllers\PembayaranController;
 use App\Http\Controllers\TahunController;
 use App\Http\Controllers\tambahpembayaran;
@@ -51,9 +51,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('home/pengaturan', App\Http\Controllers\pengaturanController::class);
     Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
     Route::get('/home/pembayaran/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
-    Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
+    // Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
     Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
     Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
+    Route::resource('/home/datakamar', App\Http\Controllers\controlkamar::class);
 });
 
 

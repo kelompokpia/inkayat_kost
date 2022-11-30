@@ -69,4 +69,10 @@ class PembayaranController extends Controller
             'kamars' => Kamar::all()
         ]);
     }
+
+    public function destroy($id)
+    {
+        Pembayaran::where('id',$id)->delete();
+        return redirect()->to('/home/pembayaran')->with('succes','Data berhasil dihapus.');
+    }
 }
