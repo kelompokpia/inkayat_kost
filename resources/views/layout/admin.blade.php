@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+      <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-250488678-1"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-250488678-1');
+  </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inkayat Kost</title>
@@ -22,6 +31,7 @@
     <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css" >
   </head>
+
   <body style = "font-family: 'Secular One', sans-serif;" class=" hold-transition sidebar-mini layout-fixed">
     <main>
       <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #dbd9a1">
@@ -35,11 +45,8 @@
         </ul>
       </nav>
     <aside class="main-sidebar sidebar-dark-primary elevation-4" style="background-color: #dbd9a1">
-        <!-- Brand Logo -->
-        {{-- <img src="{{ asset('img/logo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 w-25" style="opacity: .8;"> --}}
         <h3 class="brand-text font-weight-light mt-3 mx-1">Menu Admin</h3>
         <hr>
-          <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
               <li class="nav-item">
@@ -109,6 +116,5 @@
   <script src="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.js"></script>
   <script src="{{ asset('adminLTE') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <script src="{{ asset('adminLTE') }}/dist/js/adminlte.js"></script>
-  
   </body>
 </html>
