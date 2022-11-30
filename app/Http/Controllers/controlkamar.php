@@ -75,7 +75,7 @@ class controlkamar extends Controller
         ];
 
         data_kamar::create($data);
-        return redirect ()->to('datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
+        return redirect ()->to('home/datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
     }
 
     /**
@@ -132,7 +132,7 @@ class controlkamar extends Controller
             ];
     
             data_kamar::where('nama_kamar',$id)->update($data);
-            return redirect ()->to('datakamar')->with('success','Berhasil Mengubah data Inkayat Kost');
+            return redirect ()->to('home/datakamar')->with('success','Berhasil Mengubah data Inkayat Kost');
         } 
     }
 
@@ -145,6 +145,6 @@ class controlkamar extends Controller
     public function destroy($id)
     {
         data_kamar::where('nama_kamar',$id)->delete();
-        return redirect()->to('datakamar')->with('succes','Berhasil menghapus data');
+        return redirect()->to('home/datakamar')->with('succes','Berhasil menghapus data');
     }
 }
