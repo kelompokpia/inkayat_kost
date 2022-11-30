@@ -50,8 +50,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
     Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
     Route::resource('/home/datakamar', App\Http\Controllers\controlkamar::class);
-    // Route::get('/datakamar', [App\Http\Controllers\controlkamar, 'index'])->name('Datakamar');
-    // Route::post('/datakamar', [App\Http\Controllers\controlkamar, 'index'])->name('Datakamar');
 });
 
 
