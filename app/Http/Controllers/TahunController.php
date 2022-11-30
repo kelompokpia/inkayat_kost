@@ -38,4 +38,10 @@ class TahunController extends Controller
             'tahuns' => Tahun::all()
         ]);
     }
+
+    public function destroy($id)
+    {
+        Pembayaran::where('id',$id)->delete();
+        return redirect()->to('/home/pembayaran')->with('success','Data berhasil dihapus.');
+    }
 }

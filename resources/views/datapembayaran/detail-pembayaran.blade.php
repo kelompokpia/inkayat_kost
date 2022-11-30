@@ -89,7 +89,15 @@ $lastChar = substr(Request::url(), -4);
                                         <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="https://wa.me/0{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau tanggal jatuh tempo pembayaran kos kamu setiap bulan tanggal {{ substr($pembayaran->kamar->tanggal_masuk, -2) }}.Jangan lupa untuk bayar kos untuk bulan ini ya!" target="_blank"><i class="bi bi-whatsapp pe-2"></i>Ingatkan</a></li>
                                         <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square pe-2"></i>Edit</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat pe-2"></i>Reset</a></li>
+                                        <li>
+                                          <form onsubmit="return confirm('Yakin ingin menghapus data?') "class ='d-inline' action="{{ url('home/pembayaran/'.$pembayaran->id)}}"
+                                            method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                                <button type="submit" name="submit" class="btn text-left" style="width: 100%;"><i class="bi bi-trash pe-2"></i>Hapus</button>
+                                            </form>
+                                        </li>
+                                        {{-- <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-repeat pe-2"></i>Reset</a></li> --}}
                                         </ul>
                                     </div>
                                     </td>

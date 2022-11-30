@@ -46,12 +46,12 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('home/pengaturan', App\Http\Controllers\pengaturanController::class);
     Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
     Route::get('/home/pembayaran/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
-    Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
+    // Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
     Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
     Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
     Route::resource('datakamar', App\Http\Controllers\controlkamar::class );
- Route::get('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
- Route::post('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
+    Route::get('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
+    Route::post('/datakamar', [kamarController::class, 'index'])->name('Datakamar');
 });
 
 
