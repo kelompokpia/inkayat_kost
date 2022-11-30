@@ -14,21 +14,24 @@ return new class extends Migration
     public function up()
     {
         Schema::create('pembayarans', function (Blueprint $table) {
-            $table->id();
+            $table->id()->unique();
             $table->integer('tahun');
             $table->foreignId('id_kamar');
-            $table->string('jan');
-            $table->string('feb');
-            $table->string('mar');
-            $table->string('apr');
-            $table->string('mei');
-            $table->string('jun');
-            $table->string('jul');
-            $table->string('ags');
-            $table->string('sep');
-            $table->string('okt');
-            $table->string('nov');
-            $table->string('des');
+            $table->string('jan')->nullable();
+            $table->string('feb')->nullable();
+            $table->string('mar')->nullable();
+            $table->string('apr')->nullable();
+            $table->string('mei')->nullable();
+            $table->string('jun')->nullable();
+            $table->string('jul')->nullable();
+            $table->string('ags')->nullable();
+            $table->string('sep')->nullable();
+            $table->string('okt')->nullable();
+            $table->string('nov')->nullable();
+            $table->string('des')->nullable();
+            $table->unique(array('tahun', 'id_kamar'));
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
         });
     }
 

@@ -1,4 +1,4 @@
-@extends('Layout_Admin.template')
+@extends('layout.admin')
 
 @section('content')
 @if (Session::has('Success'))
