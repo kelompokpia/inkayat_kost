@@ -13,7 +13,7 @@
 <form action='{{ url('home/datakamar/'.$data->nama_kamar) }}' method='post'>
     @csrf
     @method('PUT')
-        <div class=" bg-body rounded shadow-sm">
+        <div class=" bg-body rounded">
             <div class="mb-3 row justify-content-center">
                 <label for="kamar" class="col-sm-2 col-form-label">Kamar</label>
                 <div class="col-sm-4">

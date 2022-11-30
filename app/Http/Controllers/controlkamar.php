@@ -75,7 +75,7 @@ class controlkamar extends Controller
         ];
 
         data_kamar::create($data);
-        return redirect ()->to('home/datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
+        return redirect ()->to('home/create/datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
     }
 
     /**
