@@ -16,14 +16,15 @@ return new class extends Migration
         Schema::create('kamars', function (Blueprint $table) {
             $table->integer('id')->unique()->autoIncrement();
             $table->string('nama_kamar');
-            $table->string('gambar_kamar');
+            $table->string('gambar_kamar')->nullable();
             $table->string('nama_penghuni');
+            $table->string('alamat');
             $table->bigInteger('nik_penghuni')->unique();
             $table->bigInteger('telepon_penghuni')->unique();
-            $table->date('tanggal_masuk');
-            $table->string('status_kamar');
-            $table->integer('harga_kamar');
-            $table->text('deskripsi_kamar');
+            $table->date('tanggal_masuk')->nullable();
+            $table->string('status_kamar')->nullable();
+            $table->integer('harga_kamar')->nullable();
+            $table->text('deskripsi_kamar')->nullable();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

@@ -12,7 +12,11 @@
         @foreach ($kamar as $kamar)
         <div class="col-md-3 col-6">
             <div class="card">
+              @if($kamar->gambar_kamar)
               <img src="img/{{ $kamar['gambar_kamar'] }}" class="card-img-top" alt="{{ $kamar["nama_kamar"] }}" title="{{ $kamar["nama_kamar"] }}">
+              @else
+              <img src="{{ asset('img/logo.jpg')}}" alt="">
+              @endif
               <div class="card-body">
                 <div class="{{ ($kamar["status_kamar"]==="Terisi") ? 'kamar-status-terisi': 'kamar-status' }}">{{ $kamar["status_kamar"] }} &#8226; IDR{{ $kamar["harga_kamar"] }}K</div>
                 <h5 class="card-title">{{ $kamar["nama_kamar"] }}</h5>
