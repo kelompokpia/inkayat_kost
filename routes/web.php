@@ -28,23 +28,22 @@ use Spatie\Analytics\Period;
 |
 */
 
-// Route::get('/', function () {
-//     return view('portofolio.index');
+// Route::get('/home', function () {
+//     $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+//     return view('Admin.dasbord', ['analyticsData' => $analyticsData]);
 // });
 
 
 
-Route::resource('/', App\Http\Controllers\kostController::class );
+Route::resource('/index', App\Http\Controllers\kostController::class );
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/login', [App\Http\Controllers\login::class, 'index']);
     Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'] )->name('home');
-    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'] {
-
-    //     $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7))
-    //     return view('/home', ['analyticsData' => $analyticsData]);
-    // })->name('home');
+    Route::get('/home', function () {
+        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
+        return view('admin.dasbord', ['analyticsData' => $analyticsData]);
+    });
     Route::get('home/datakamar', [kamarController::class, 'show'])->name('Datakamar');
     Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
     Route::get('/home/pembayaran/tahun/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');

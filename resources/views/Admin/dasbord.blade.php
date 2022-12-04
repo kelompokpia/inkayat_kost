@@ -32,7 +32,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>100</sup></h3>
+                <h3>100</h3>
                 <p>Jumlah Penghuni</p>
               </div>
               <div class="icon">
@@ -40,21 +40,29 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-6">
+          {{-- <div class="col-lg-6 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
-              <div class="inner">
-                {{-- @foreach ($analyticsData as $data) --}}
-                {{-- {{ $data['pageViews'] }} --}}
-                <h3>11</h3>
-                <p>Pengunjung Website</p>
-                {{-- @endforeach --}}
-              </div>
-              <div class="icon">
-                <i class="ion  ion-stats-bars"></i>
-              </div>
-            </div>
-          </div>
+                <table class="table-auto table bg-warning">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Visitors</th>
+                      <th>Page Title</th>
+                      <th>Page Views</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($analyticsData as $data)
+                    <tr>
+                      <td>{{ $data['date'] }}</td>
+                      <td>{{ $data['visitors'] }}</td>
+                      <td>{{ $data['pageTitle'] }}</td>
+                      <td>{{ $data['pageViews'] }}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div> --}}
           <!-- ./col -->
           {{-- <div class="col-lg-3 col-6">
             <!-- small box -->
@@ -70,7 +78,7 @@
           </div> --}}
         </div>
         <div class="row">
-          <section class="col-lg-12 connectedSortable">
+          <section class="col-lg-6 connectedSortable">
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
@@ -119,7 +127,38 @@
                 </ul>
               </div>
           </section>
-        </div>
+          <section class="col-lg-6 connectedSortable">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">
+                  <i class="ion ion-clipboard mr-1"></i>
+                  Daftar Pengunjung Website
+                </h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table-auto table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Visitors</th>
+                      <th>Page Title</th>
+                      <th>Page Views</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @foreach ($analyticsData as $data)
+                    <tr>
+                      <td>{{ $data['date'] }}</td>
+                      <td>{{ $data['visitors'] }}</td>
+                      <td>{{ $data['pageTitle'] }}</td>
+                      <td>{{ $data['pageViews'] }}</td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
+          </section>
       </div>
     </section>
   </div>
