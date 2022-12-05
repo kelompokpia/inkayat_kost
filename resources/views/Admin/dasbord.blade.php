@@ -21,7 +21,9 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                <h3>13</h3>
+                {{-- @foreach ($data as $d) --}}
+                <h3>{{ $count }}</h3>
+                {{-- @endforeach --}}
                 <p>Kamar</p>
               </div>
               <div class="icon">
@@ -32,7 +34,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-success">
               <div class="inner">
-                <h3>100</h3>
+                <h3>{{ $data }}</h3>
                 <p>Jumlah Penghuni</p>
               </div>
               <div class="icon">
@@ -88,7 +90,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <ul class="todo-list" data-widget="todo-list">
+                {{-- <ul class="todo-list" data-widget="todo-list">
                   <li>
                     <span class="handle">
                       <i class="fas fa-ellipsis-v"></i>
@@ -124,7 +126,23 @@
                       <a href="wa.me/6282242478858" class="text-dark "><i class="fa-brands fa-square-whatsapp fs-2"></i></a>
                     </div>
                   </li>
-                </ul>
+                </ul> --}}
+                  <table class="table-auto table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>Nama</th>
+                        <th>No HP</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($nama as $nama)
+                      <tr>
+                        <td>{{$nama->nama_penghuni}}</td>
+                        <td>{{$nama->telepon_penghuni}}</td>
+                      </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
               </div>
           </section>
           <section class="col-lg-6 connectedSortable">
@@ -135,9 +153,8 @@
                   Daftar Pengunjung Website
                 </h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
-                <table class="table-auto table">
+                <table class="table-auto table table-bordered">
                   <thead>
                     <tr>
                       <th>Date</th>
@@ -158,8 +175,8 @@
                   </tbody>
                 </table>
               </div>
-          </section>
-      </div>
-    </section>
-  </div>
+      </section>
+    </div>
+  </section>
+</div>
 @endsection

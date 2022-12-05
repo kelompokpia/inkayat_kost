@@ -15,7 +15,7 @@ class controlkamar extends Controller
     public function index(Request $request)
     {   
         $katakunci = $request->katakunci;
-        $jumlahbaris = 3;
+        $jumlahbaris = 5;
         if(strlen($katakunci)){
             $data = data_kamar::where('nama_penghuni','like',"%$katakunci%")
                     ->orWhere('nama_kamar','like',"%$katakunci%")
@@ -75,7 +75,7 @@ class controlkamar extends Controller
         ];
 
         data_kamar::create($data);
-        return redirect ()->to('home/create/datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
+        return redirect ()->to('home/datakamar')->with('success','Berhasil Menambahkan data Inkayat Kost');
     }
 
     /**

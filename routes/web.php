@@ -36,14 +36,11 @@ use Spatie\Analytics\Period;
 
 
 Route::resource('/index', App\Http\Controllers\kostController::class );
-
+Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::get('/login', [App\Http\Controllers\login::class, 'index']);
     Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
-    Route::get('/home', function () {
-        $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
-        return view('admin.dasbord', ['analyticsData' => $analyticsData]);
-    });
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('home/datakamar', [kamarController::class, 'show'])->name('Datakamar');
     Route::get('/home/pembayaran', [PembayaranController::class, 'show'])->name('Pembayaran');
     Route::get('/home/pembayaran/tahun/{tahun:slug}', [PembayaranController::class, 'tahun'])->name('Tahun');
@@ -57,4 +54,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-Auth::routes();
+

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Analytics;
 use Spatie\Analytics\Period;
+use App\Models\Kamar;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data = Kamar::count();
+        $count = Kamar::select('nama_kamar')->count();
+        $nama = Kamar::all();
         $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
-        return view('Admin.dasbord');
+        return view('Admin.dasbord', compact('data','count'), ['analyticsData' => $analyticsData])->with('nama', $nama);
     }
 }
