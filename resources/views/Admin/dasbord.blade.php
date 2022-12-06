@@ -114,10 +114,10 @@
                 <table class="table-auto table table-bordered">
                   <thead>
                     <tr>
-                      <th>Date</th>
-                      <th>Visitors</th>
-                      <th>Page Title</th>
-                      <th>Page Views</th>
+                      <th>Tanggal</th>
+                      <th>Pengunjung</th>
+                      <th>Halaman</th>
+                      <th>Dilihat</th>
                     </tr>
                   </thead>
                   <tbody>
