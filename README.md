@@ -13,3 +13,6 @@ https://codingrakitan.blogspot.com/2020/08/cara-membuat-project-baru-node-js.htm
 
 composer require spatie/laravel-permission
 php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
+
+buat folder analytics di folder storage/app
+pindahkan file service-account-credentials.json ke folder storage/app/analytics
