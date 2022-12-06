@@ -38,7 +38,6 @@ use Spatie\Analytics\Period;
 Route::resource('/index', App\Http\Controllers\kostController::class );
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
-    Route::get('/login', [App\Http\Controllers\login::class, 'index']);
     Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
     Route::get('home/datakamar', [kamarController::class, 'show'])->name('Datakamar');

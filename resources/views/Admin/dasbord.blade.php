@@ -88,57 +88,14 @@
                   Daftar Penghuni
                 </h3>
               </div>
-              <!-- /.card-header -->
               <div class="card-body">
-                {{-- <ul class="todo-list" data-widget="todo-list">
-                  <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                    <div  class="icheck-primary d-inline ml-2">
-                    </div>
-                    <span class="text">Dina faradina</span>
-                    <div class="tools">
-                      <a href="wa.me/6282242478858" class="text-dark "><i class="fa-brands fa-square-whatsapp fs-2"></i></a>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                    <div  class="icheck-primary d-inline ml-2">
-                    </div>
-                    <span class="text">Nina sari</span>
-                    <div class="tools">
-                      <a href="wa.me/6282242478858" class="text-dark "><i class="fa-brands fa-square-whatsapp fs-2"></i></a>
-                    </div>
-                  </li>
-                  <li>
-                    <span class="handle">
-                      <i class="fas fa-ellipsis-v"></i>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </span>
-                    <div  class="icheck-primary d-inline ml-2"></div>
-                    <span class="text">Noni Siti</span>
-                    <div class="tools">
-                      <a href="wa.me/6282242478858" class="text-dark "><i class="fa-brands fa-square-whatsapp fs-2"></i></a>
-                    </div>
-                  </li>
-                </ul> --}}
+                
                   <table class="table-auto table table-bordered">
-                    <thead>
-                      <tr>
-                        <th>Nama</th>
-                        <th>No HP</th>
-                      </tr>
-                    </thead>
                     <tbody>
                       @foreach ($nama as $nama)
                       <tr>
                         <td>{{$nama->nama_penghuni}}</td>
-                        <td>{{$nama->telepon_penghuni}}</td>
+                        <td><a href="https://wa.me/{{$nama->telepon_penghuni}}"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                       </tr>
                       @endforeach
                     </tbody>
