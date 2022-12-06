@@ -25,10 +25,9 @@ class TahunController extends Controller
             'tahun' => 'required|min:4|max:4'
         ]);
 
-        $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['user_id'] = auth()->user()->id;
 
         Tahun::create($validatedData);
-
         return redirect('/home/pembayaran')->with('success', 'Tahun berhasil ditambahkan ke database.');
     }
 
@@ -41,7 +40,7 @@ class TahunController extends Controller
 
     public function destroy($id)
     {
-        Pembayaran::where('id',$id)->delete();
-        return redirect()->to('/home/pembayaran')->with('success','Data berhasil dihapus.');
+        Pembayaran::where('id', $id)->delete();
+        return redirect()->to('/home/pembayaran')->with('success', 'Data berhasil dihapus.');
     }
 }

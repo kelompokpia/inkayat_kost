@@ -14,12 +14,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Dumping database structure for db_inkayat
-DROP DATABASE IF EXISTS `db_inkayat`;
-CREATE DATABASE IF NOT EXISTS `db_inkayat` /*!40100 DEFAULT CHARACTER SET armscii8 COLLATE armscii8_bin */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `db_inkayat`;
-
 -- Dumping structure for table db_inkayat.failed_jobs
 DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE IF NOT EXISTS `failed_jobs` (
@@ -57,30 +51,11 @@ CREATE TABLE IF NOT EXISTS `kamars` (
   UNIQUE KEY `kamars_telepon_penghuni_unique` (`telepon_penghuni`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_inkayat.kamars: ~2 rows (approximately)
+-- Dumping data for table db_inkayat.kamars: ~3 rows (approximately)
 INSERT INTO `kamars` (`id`, `nama_kamar`, `gambar_kamar`, `nama_penghuni`, `nik_penghuni`, `telepon_penghuni`, `tanggal_masuk`, `status_kamar`, `harga_kamar`, `deskripsi_kamar`, `created_at`, `updated_at`) VALUES
 	(1, 'Kamar 1', 'kamar-1.jpeg', 'Mawar', 1234567890123456, 897651526378, '2022-11-01', 'Tersedia', 400, 'kamar yang sangat nyaman', '2022-11-29 07:09:14', '2022-11-29 07:09:14'),
 	(2, 'Kamar 2', 'kamar-2.jpeg', 'Bunga', 1234567890123455, 897651526379, '2022-11-01', 'Tersedia', 410, 'kamar yang sangat nyaman', '2022-11-29 07:09:14', '2022-11-29 07:09:14'),
 	(3, 'Kamar 3', 'kamar-3.jpeg', 'Indah', 1234567890123454, 897651526370, '2022-11-02', 'Terisi', 430, 'kamar yang sangat nyaman', '2022-11-29 07:09:14', '2022-11-29 07:09:14');
-
--- Dumping structure for table db_inkayat.migrations
-DROP TABLE IF EXISTS `migrations`;
-CREATE TABLE IF NOT EXISTS `migrations` (
-  `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- Dumping data for table db_inkayat.migrations: ~0 rows (approximately)
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-	(1, '2014_10_12_000000_create_users_table', 1),
-	(2, '2014_10_12_100000_create_password_resets_table', 1),
-	(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-	(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-	(5, '2022_11_06_035940_create_kamars_table', 1),
-	(6, '2022_11_15_024626_pembayarans', 1),
-	(7, '2022_11_15_053608_tahuns', 1);
 
 -- Dumping structure for table db_inkayat.password_resets
 DROP TABLE IF EXISTS `password_resets`;
@@ -118,7 +93,7 @@ CREATE TABLE IF NOT EXISTS `pembayarans` (
   UNIQUE KEY `pembayarans_id_unique` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_inkayat.pembayarans: ~0 rows (approximately)
+-- Dumping data for table db_inkayat.pembayarans: ~1 rows (approximately)
 INSERT INTO `pembayarans` (`id`, `tahun`, `id_kamar`, `jan`, `feb`, `mar`, `apr`, `mei`, `jun`, `jul`, `ags`, `sep`, `okt`, `nov`, `des`, `created_at`, `updated_at`) VALUES
 	(1, 2022, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2022-11-29 07:13:02', '2022-11-29 07:13:02');
 
@@ -171,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   UNIQUE KEY `users_name_unique` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Dumping data for table db_inkayat.users: ~0 rows (approximately)
+-- Dumping data for table db_inkayat.users: ~1 rows (approximately)
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 	(1, 'Rohmat', 'kelompok@gmail.com', '2022-11-29 07:09:14', '$2y$10$0v0y0jnxVwS3MGwyFEGpDu7RBDYh8pjzEatvZJMvxJiPcGkvT.BFy', 'lSOAJfSqp8', '2022-11-29 07:09:14', '2022-11-29 07:09:14');
 

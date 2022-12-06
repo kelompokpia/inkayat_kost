@@ -27,8 +27,7 @@ class PembayaranController extends Controller
 
     public function index()
     {
-        return view('datapembayaran.tambah-pembayaran', [
-            'kamars' => Kamar::all(),
+        return view('datapembayaran.pembayaran', [
             'tahuns' => Tahun::all()
         ]);
     }
@@ -56,9 +55,59 @@ class PembayaranController extends Controller
         return redirect('/home/pembayaran')->with('success', 'Kamar berhasil dibuat');
     }
 
-    public function edit()
+    public function edit(Pembayaran $pembayaran)
     {
-        return view('datapembayaran.edit-pembayaran');
+        return view('datapembayaran.edit-pembayaran', [
+            'kamars' => Kamar::all(),
+            'tahuns' => Tahun::all(),
+            'pembayaran' => $pembayaran
+        ]);
+    }
+
+    public function update(Request $request, Pembayaran $pembayaran)
+    {
+        // $rules = [
+        //     'id_kamar' => 'required',
+        //     'tahun' => 'required',
+        //     'jan' => '',
+        //     'feb' => '',
+        //     'mar' => '',
+        //     'apr' => '',
+        //     'mei' => '',
+        //     'jun' => '',
+        //     'jul' => '',
+        //     'ags' => '',
+        //     'sep' => '',
+        //     'okt' => '',
+        //     'nov' => '',
+        //     'des' => ''
+        // ];
+
+        $validatedData = $request->validate([
+            'id_kamar' => '',
+            'tahun' => '',
+            'jan' => '',
+            'feb' => '',
+            'mar' => '',
+            'apr' => '',
+            'mei' => '',
+            'jun' => '',
+            'jul' => '',
+            'ags' => '',
+            'sep' => '',
+            'okt' => '',
+            'nov' => '',
+            'des' => ''
+        ]);
+
+        // $validatedData = $request->validate($rules);
+        Pembayaran::where('id', $pembayaran->id)
+            ->update($validatedData);
+        return redirect('/home/pembayaran')->with('success', 'Data berhasil diperbarui.');
+
+        // Pembayaran::where('id', $request->id)
+        //     ->update($validatedData);
+        // return redirect('/home/pembayaran')->with('success', 'Data berhasil diperbarui.');
     }
 
     public function tahun()
@@ -72,7 +121,7 @@ class PembayaranController extends Controller
 
     public function destroy($id)
     {
-        Pembayaran::where('id',$id)->delete();
-        return redirect()->to('/home/pembayaran')->with('succes','Data berhasil dihapus.');
+        Pembayaran::where('id', $id)->delete();
+        return redirect()->to('/home/pembayaran')->with('success', 'Data berhasil dihapus.');
     }
 }

@@ -35,7 +35,7 @@ use Spatie\Analytics\Period;
 
 
 
-Route::resource('/index', App\Http\Controllers\kostController::class );
+Route::resource('/index', App\Http\Controllers\kostController::class);
 Auth::routes();
 Route::middleware(['auth'])->group(function () {
     Route::post('/Admin/dasbord', [App\Http\Controllers\login::class, 'login']);
@@ -46,11 +46,10 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('home/pengaturan', App\Http\Controllers\pengaturanController::class);
     Route::get('/tambah-tahun', [PembayaranController::class, 'tambah_tahun']);
     Route::get('/home/pembayaran/tambah-pembayaran', [PembayaranController::class, 'tambahPembayaran']);
-    // Route::resource('/home/pembayaran/{tahun:slug}', PembayaranController::class)->middleware('auth');
-    Route::resource('/home/pembayaran', TahunController::class)->middleware('auth');
-    Route::get('/edit-pembayaran', [PembayaranController::class, 'edit']);
+    // Route::get('/home/pembayaran/tahun', PembayaranController::class);
+    Route::resource('/home/pembayaran', PembayaranController::class);
+    Route::resource('/home/pembayaran/tambah-tahun', TahunController::class);
+    // Route::resource('/home/pembayaran/tahun/{pembayaran:tahun}/tambah', PembayaranController::class);
+    Route::get('/home/pembayaran/{pembayaran:id}/edit', [PembayaranController::class, 'edit']);
     Route::resource('/home/datakamar', App\Http\Controllers\controlkamar::class);
 });
-
-
-

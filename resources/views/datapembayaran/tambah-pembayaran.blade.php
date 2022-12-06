@@ -15,7 +15,7 @@ $link = $_SERVER['HTTP_REFERER'];
         </div>
         <div class="row justify-content-center">
             <div class="col-11">
-                <form method="post" action="/home/pembayaran/{{ $lastChar }}">
+                <form method="post" action="/home/pembayaran">
                     @csrf
                     <div class="row justify-content-between pb-3">
                         <div class="col-8">
