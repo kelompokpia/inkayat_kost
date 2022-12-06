@@ -10,3 +10,6 @@ sesuai urutan
 
 ikuti sampai npm install saja
 https://codingrakitan.blogspot.com/2020/08/cara-membuat-project-baru-node-js.html
+
+composer require spatie/laravel-permission
+php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"
