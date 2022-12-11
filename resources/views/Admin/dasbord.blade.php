@@ -21,9 +21,7 @@
           <div class="col-lg-3 col-6">
             <div class="small-box bg-info">
               <div class="inner">
-                {{-- @foreach ($data as $d) --}}
                 <h3>{{ $count }}</h3>
-                {{-- @endforeach --}}
                 <p>Kamar</p>
               </div>
               <div class="icon">
@@ -42,42 +40,6 @@
               </div>
             </div>
           </div>
-          {{-- <div class="col-lg-6 col-6">
-            <!-- small box -->
-                <table class="table-auto table bg-warning">
-                  <thead>
-                    <tr>
-                      <th>Date</th>
-                      <th>Visitors</th>
-                      <th>Page Title</th>
-                      <th>Page Views</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    @foreach ($analyticsData as $data)
-                    <tr>
-                      <td>{{ $data['date'] }}</td>
-                      <td>{{ $data['visitors'] }}</td>
-                      <td>{{ $data['pageTitle'] }}</td>
-                      <td>{{ $data['pageViews'] }}</td>
-                    </tr>
-                    @endforeach
-                  </tbody>
-                </table>
-              </div> --}}
-          <!-- ./col -->
-          {{-- <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>65</h3>
-                <p>Unique Visitors</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-            </div>
-          </div> --}}
         </div>
         <div class="row">
           <section class="col-lg-6 connectedSortable">

@@ -29,7 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $data = Kamar::count();
-        $count = Kamar::select('nama_kamar')->count();
+        $count = Kamar::select('nama_kamar')->groupBy('nama_kamar')->get()->count();
         $nama = Kamar::all();
         $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
         return view('Admin.dasbord', compact('data','count'), ['analyticsData' => $analyticsData])->with('nama', $nama);
