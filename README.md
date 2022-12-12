@@ -16,3 +16,13 @@ php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvid
 
 buat folder analytics di folder storage/app
 pindahkan file service-account-credentials.json ke folder storage/app/analytics
+@if ($errors->any())
+      <div class="pt-3">
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $item)
+                      <li>{{$item }} </li>
+@endforeach
+</ul>
+</div>
+</div>
