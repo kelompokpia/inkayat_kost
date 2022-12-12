@@ -1,18 +1,18 @@
 @extends('layout.admin')
 
 @section('content')
+@if (Session::has('Success'))
+    <div class="pt-3">
+        <div class="alert alert-Success">
+            {{Session::get('Success')}}
+        </div>
+    </div>
+@endif
 <section>
 <div class="container">
     <div class="row justify-content-center mb-4">
                 <div class="col-10 justify-content-center">
                 <h1>Data kamar</h1>
-                @if (Session::has('success'))
-    <div class="pt-3">
-        <div class="alert alert-success">
-            {{Session::get('success')}}
-        </div>
-    </div>
-@endif
                 <form class="d-flex pb-3" action="{{ url('home/datakamar') }}" method="get">
                       <input class="form-control me-1" type="search" name="katakunci" value="{{ Request::get('katakunci') }}" placeholder="Masukkan kata kunci" aria-label="Search">
                       <button class="btn btn-secondary" type="submit">Cari</button>
@@ -42,7 +42,7 @@
                             <td>{{ $item->telepon_penghuni}}</td>
                             <td>
                                 <a href='{{url('home/datakamar/'.$item->id.'/edit') }}' class="btn btn-warning btn-sm">Ubah</a>
-                                <form onsubmit="return confirm('Yakin ingin menghapus data?') "class ='d-inline' action="{{ url('home/datakamar/'.$item->id)}}"
+                                <form onsubmit="return confirm('Yakin ingin menghapus data?') "class ='d-inline' action="{{ url('home/datakamar/'.$item->nama_kamar)}}"
                                 method="post">
                                 @csrf
                                 @method('DELETE')

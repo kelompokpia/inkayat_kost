@@ -133,8 +133,8 @@ class controlkamar extends Controller
             $data = [
                 'nama_kamar'=>$request->nama_kamar,
                 'nama_penghuni'=>$request->nama_penghuni,
-                
-                'alamat'=>$request->alamat
+                'alamat'=>$request->alamat,
+                'telepon_penghuni'=>$request->telepon_penghuni,
             ];
             if($request->telepon_penghuni != $telepon){
                 $data['telepon_penghuni']=$request->telepon_penghuni;
@@ -142,7 +142,7 @@ class controlkamar extends Controller
     
             data_kamar::where('id',$id)->update($data);
             return redirect ()->to('home/datakamar')->with('success','Berhasil Mengubah data Inkayat Kost');
-        } 
+        }
     }
 
     /**
