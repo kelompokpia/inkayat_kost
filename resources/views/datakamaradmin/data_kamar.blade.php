@@ -41,7 +41,7 @@
                             <td>{{ $item->alamat}}</td>
                             <td>{{ $item->telepon_penghuni}}</td>
                             <td>
-                                <a href='{{url('home/datakamar/'.$item->nama_kamar.'/edit') }}' class="btn btn-warning btn-sm">Ubah</a>
+                                <a href='{{url('home/datakamar/'.$item->id.'/edit') }}' class="btn btn-warning btn-sm">Ubah</a>
                                 <form onsubmit="return confirm('Yakin ingin menghapus data?') "class ='d-inline' action="{{ url('home/datakamar/'.$item->nama_kamar)}}"
                                 method="post">
                                 @csrf
