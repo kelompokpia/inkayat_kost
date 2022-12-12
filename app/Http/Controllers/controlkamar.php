@@ -120,10 +120,11 @@ class controlkamar extends Controller
                 'nama_penghuni'=>'required',               
                 'alamat'=>'required',
             ],[
-                'nama_kamar.required' => 'Kamar wajib di isi',
-                'nama_penghuni.required' => 'Nama wajib di isi',                
+                'nama_kamar.required' => 'Kamar wajib diisi',
+                'nama_penghuni.required' => 'Nama wajib diisi', 
+                'nik_pebghuni.numeric' => 'NIK wajib diisi & tidak boleh sama',               
                 'alamat.required' => 'Alamat wajib di isi',
-                'telepon_penghuni.required' => 'Telpon wajib di isi & tidak boleh sama',
+                'telepon_penghuni.numeric' => 'Telpon wajib diisi & tidak boleh sama',
             ]);
 
             if($request->telepon_penghuni != $telepon){
