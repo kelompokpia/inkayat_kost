@@ -32,12 +32,7 @@ $link = $_SERVER['HTTP_REFERER'];
                                     <div class="col-md-8">
                                         <div class="mb-3">
                                             <label for="id_kamar" class="form-label">Kamar</label>
-                                            <select class="form-select" aria-label="Default select example" id="id_kamar" name="id_kamar" required @error('id_kamar')  @enderror aria-describedby="kamarHelp" disabled>
-                                                <option selected></option>
-                                                @foreach ($kamars as $kamar)
-                                                <option value="{{ $kamar->id }}" {{ ($pembayaran->id_kamar == $kamar->id)? 'selected':' ' }} >{{ $kamar->nama_kamar }} - {{ $kamar->nama_penghuni }}</option>
-                                                @endforeach
-                                              </select>
+                                            <input type="text" class="form-control" id="id_kamar" disabled value="{{ $pembayaran->kamar->nama_kamar}} - {{ $pembayaran->kamar->nama_penghuni }}">
                                             @error('id_kamar')
                                               <div class="invalid-feedback">
                                                 {{ $message }}
@@ -48,13 +43,8 @@ $link = $_SERVER['HTTP_REFERER'];
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label for="tahun" class="form-label">Tahun</label>
-                                            <select class="form-select" aria-label="Default select example" id="tahun" name="tahun" disabled>
-                                                <option></option>
-                                                @foreach ($tahuns as $tahun)
-                                                <option value="{{ $tahun->tahun }}" {{ ($tahun->tahun===$lastChar)? 'selected':'' }}>{{ $tahun->tahun }}</option>
-                                                @endforeach
-                                            </select>
-                                            @error('id_kamar')
+                                            <input type="text" class="form-control" id="tahun" disabled value="{{ $pembayaran->tahun }}">
+                                            @error('tahun')
                                               <div class="invalid-feedback">
                                                 {{ $message }}
                                               </div>
@@ -64,9 +54,7 @@ $link = $_SERVER['HTTP_REFERER'];
                                     <div class="col-md-8">
                                         <div class="mb-3">
                                             <label for="bayar" class="form-label">Bayar</label>
-                                            <select class="form-select" aria-label="Default select example" id="bayar" name="bayar" @error('bayar')  @enderror aria-describedby="bayarHelp" disabled>
-                                                <option>Rp. {{ $pembayaran->kamar->harga_kamar }}.000</option>
-                                              </select>
+                                            <input type="text" class="form-control" id="bayar" disabled value="Rp. {{ $pembayaran->kamar->harga_kamar }}.000">
                                             @error('bayar')
                                               <div class="invalid-feedback">
                                                 {{ $message }}
@@ -77,9 +65,7 @@ $link = $_SERVER['HTTP_REFERER'];
                                     <div class="col-md-4">
                                         <div class="mb-3">
                                             <label for="tanggal_masuk" class="form-label">Jatuh Tempo</label>
-                                            <select class="form-select" aria-label="Default select example" id="tanggal_masuk" name="tanggal_masuk" @error('tanggal_masuk')  @enderror aria-describedby="kamarHelp" disabled>
-                                                <option>Tanggal {{ substr($pembayaran->kamar->tanggal_masuk, -2) }}</option>
-                                              </select>
+                                            <input type="text" class="form-control" id="tanggal_masuk" disabled value="Tanggal {{ substr($pembayaran->kamar->tanggal_masuk, -2) }}">
                                             @error('tanggal_masuk')
                                               <div class="invalid-feedback">
                                                 {{ $message }}
