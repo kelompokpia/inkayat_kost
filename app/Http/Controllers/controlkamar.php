@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\data_kamar;
+use App\Models\Pembayaran;
 use Illuminate\Support\Facades\Session;
 class controlkamar extends Controller
 {
@@ -97,7 +98,7 @@ class controlkamar extends Controller
      */
     public function edit($id)
     {
-        $data = data_kamar::where('nama_kamar', $id)->first();
+        $data = data_kamar::where('id', $id)->first();
         return view('datakamaradmin.edit')->with('data', $data);
     }
 
@@ -108,30 +109,37 @@ class controlkamar extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id,data_kamar $data_kamar)
     {
         {
+            $kamar=data_kamar::find($request->id);
+            $telepon=$kamar['telepon_penghuni'];
     
-            $request->validate([
+            $rules=$request->validate([
                 'nama_kamar'=>'required',
                 'nama_penghuni'=>'required',               
                 'alamat'=>'required',
-                'telepon_penghuni'=>'required|numeric|unique:kamars,telepon_penghuni',
             ],[
                 'nama_kamar.required' => 'Kamar wajib di isi',
                 'nama_penghuni.required' => 'Nama wajib di isi',                
                 'alamat.required' => 'Alamat wajib di isi',
                 'telepon_penghuni.required' => 'Telpon wajib di isi & tidak boleh sama',
             ]);
+
+            if($request->telepon_penghuni != $telepon){
+                $rules['telepon_penghuni']='required|numeric|unique:kamars,telepon_penghuni';
+            }
             $data = [
                 'nama_kamar'=>$request->nama_kamar,
                 'nama_penghuni'=>$request->nama_penghuni,
                 
-                'alamat'=>$request->alamat,
-                'telepon_penghuni'=>$request->telepon_penghuni,
+                'alamat'=>$request->alamat
             ];
+            if($request->telepon_penghuni != $telepon){
+                $data['telepon_penghuni']=$request->telepon_penghuni;
+            }
     
-            data_kamar::where('nama_kamar',$id)->update($data);
+            data_kamar::where('id',$id)->update($data);
             return redirect ()->to('home/datakamar')->with('success','Berhasil Mengubah data Inkayat Kost');
         } 
     }
@@ -144,7 +152,8 @@ class controlkamar extends Controller
      */
     public function destroy($id)
     {
-        data_kamar::where('nama_kamar',$id)->delete();
-        return redirect()->to('home/datakamar')->with('succes','Berhasil menghapus data');
+        data_kamar::where('id',$id)->delete();
+        Pembayaran::where('id_kamar',$id)->delete();
+        return redirect()->to('home/datakamar')->with('success','Berhasil menghapus data');
     }
 }
