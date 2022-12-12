@@ -83,7 +83,9 @@ class pengaturanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = pengaturan::where('id', $id)->first();
+        $item = pengaturan::all();
+        return view('pengaturan.edit_admin')->with('data', $data)->with('item',$item);
     }
 
     /**
@@ -95,7 +97,30 @@ class pengaturanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        {
+    
+            $rules=$request->validate([
+                'name'=>'required',
+                
+                'password'=>'required',
+            ]);
+
+            if($request->email !=Auth()->user()->email){
+                $rules['email']='required|unique:users,email';
+            }
+
+            $data = [
+            'name'=>$request->name,
+            'password'=>Hash::make($request->password),
+            ];
+
+            if($request->email !=Auth()->user()->email){
+                $data['email']=$request->email;
+            }
+    
+            pengaturan::where('id',$id)->update($data);
+            return redirect ()->to('home/pengaturan')->with('success','Berhasil Mengubah data Inkayat Kost');
+        }
     }
 
     /**

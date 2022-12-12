@@ -23,6 +23,7 @@
                   <td>{{ $item->name}}</td>
                   <td>{{ $item->email}}</td>
                   <td>
+                    <a href='{{url('home/pengaturan/'.$item->id.'/edit') }}' class="btn btn-warning btn-sm">Ubah</a>
                     <form onsubmit="return confirm('Yakin ingin menghapus data?')" class ='d-inline' action="{{ url('home/pengaturan/'.$item->email)}}"
                         method="post">
                         @csrf
