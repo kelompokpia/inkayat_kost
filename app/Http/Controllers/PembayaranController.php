@@ -83,6 +83,8 @@ class PembayaranController extends Controller
         //     'des' => ''
         // ];
 
+        $tahun = $pembayaran->tahun;
+
         $validatedData = $request->validate([
             'id_kamar' => '',
             'tahun' => '',
