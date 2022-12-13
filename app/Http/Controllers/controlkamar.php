@@ -23,6 +23,8 @@ class controlkamar extends Controller
                     ->orWhere('nik_penghuni','like',"%$katakunci%")
                     ->orWhere('alamat','like',"%$katakunci%")
                     ->orWhere('telepon_penghuni','like',"%$katakunci%")
+                    ->orWhere('harga_kamar','like',"%$katakunci%")
+                    ->orWhere('tanggal_masuk','like',"%$katakunci%")
                     ->paginate($jumlahbaris);
         }else{
             $data = data_kamar::orderBy('nama_kamar','desc')->paginate($jumlahbaris);
@@ -53,6 +55,8 @@ class controlkamar extends Controller
         Session::flash('nik_penghuni',$request->nik_penghuni);
         Session::flash('alamat',$request->alamat);
         Session::flash('telepon_penghuni',$request->telepon_penghuni);
+        Session::flash('harga_kamar',$request->harga_kamar);
+        Session::flash('tanggal_masuk',$request->tanggal_masuk);
 
         $request->validate([
             'nama_kamar'=>'required',
@@ -60,12 +64,16 @@ class controlkamar extends Controller
             'nik_penghuni'=>'required|numeric|unique:kamars,nik_penghuni',
             'alamat'=>'required',
             'telepon_penghuni'=>'required|numeric|unique:kamars,telepon_penghuni',
+            'harga_kamar'=>'required',
+            'tanggal_masuk'=>'required',
         ],[
             'nama_kamar.required' => 'Kamar wajib di isi',
             'nama_penghuni.required' => 'Nama wajib di isi',
             'nik_penghuni.required' => 'NIK wajib di isi & tidak boleh sama',
             'alamat.required' => 'Alamat wajib di isi',
             'telepon_penghuni.required' => 'Telpon wajib di isi & tidak boleh sama',
+            'harga_kamar.required' => 'Harga Kamar wajib di isi',
+            'tanggal_masuk.required' => 'Tanggal Masuk wajib di isi',
         ]);
         $data = [
             'nama_kamar'=>$request->nama_kamar,
@@ -73,6 +81,8 @@ class controlkamar extends Controller
             'nik_penghuni'=>$request->nik_penghuni,
             'alamat'=>$request->alamat,
             'telepon_penghuni'=>$request->telepon_penghuni,
+            'harga_kamar'=>$request->harga_kamar,
+            'tanggal_masuk'=>$request->tanggal_masuk,
         ];
 
         data_kamar::create($data);
@@ -119,12 +129,16 @@ class controlkamar extends Controller
                 'nama_kamar'=>'required',
                 'nama_penghuni'=>'required',               
                 'alamat'=>'required',
+                'harga_kamar'=>'required',
+                'tanggal_masuk'=>'required',
             ],[
                 'nama_kamar.required' => 'Kamar wajib diisi',
                 'nama_penghuni.required' => 'Nama wajib diisi', 
                 'nik_pebghuni.numeric' => 'NIK wajib diisi & tidak boleh sama',               
                 'alamat.required' => 'Alamat wajib di isi',
                 'telepon_penghuni.numeric' => 'Telpon wajib diisi & tidak boleh sama',
+                'harga_kamar.required' => 'Harga Kamar wajib diisi',
+                'tanggal_masuk.required' => 'Tanggal Masuk wajib diisi', 
             ]);
 
             if($request->telepon_penghuni != $telepon){
@@ -135,6 +149,8 @@ class controlkamar extends Controller
                 'nama_penghuni'=>$request->nama_penghuni,
                 'alamat'=>$request->alamat,
                 'telepon_penghuni'=>$request->telepon_penghuni,
+                'harga_kamar'=>$request->harga_kamar,
+                'tanggal_masuk'=>$request->tanggal_masuk,
             ];
             if($request->telepon_penghuni != $telepon){
                 $data['telepon_penghuni']=$request->telepon_penghuni;

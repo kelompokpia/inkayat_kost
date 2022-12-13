@@ -5,9 +5,18 @@
 
 <section class="mt-5">
 <!-- START FORM -->
-<div class="row justify-content-end">
+<div class="row justify-content-center">
 <div class="col-7">
     <h1>Tambah Data</h1>
+    @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $data)
+                      <li>{{$data }} </li>
+                  @endforeach
+             </ul>
+        </div>
+@endif
 </div>
 </div>
 
@@ -46,6 +55,20 @@
                 <div class="col-sm-4">
                     <input type="number" class="form-control" name='telepon_penghuni'value="{{Session::get
                         ('telepon_penghuni')}}" id="telepon_penghuni">
+                </div>
+            </div>
+            <div class="mb-3 row justify-content-center">
+                <label for="Harga Kamar" class="col-sm-2 col-form-label">Harga Kamar</label>
+                <div class="col-sm-4">
+                    <input type="number" class="form-control" name='harga_kamar'value="{{Session::get
+                        ('harga_kamar')}}" id="harga_kamar">
+                </div>
+            </div>
+            <div class="mb-3 row justify-content-center">
+                <label for="Tanggal Masuk" class="col-sm-2 col-form-label">Tanggal Masuk</label>
+                <div class="col-sm-4">
+                    <input type="date" class="form-control" name='tanggal_masuk'value="{{Session::get
+                        ('tanggal_masuk')}}" id="tanggal_masuk">
                 </div>
             </div>
             <div class="mb-3 row justify-content-center">
