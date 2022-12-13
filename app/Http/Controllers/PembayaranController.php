@@ -100,7 +100,6 @@ class PembayaranController extends Controller
             'des' => ''
         ]);
 
-        // $validatedData = $request->validate($rules);
         Pembayaran::where('id', $pembayaran->id)
             ->update($validatedData);
         return redirect('/home/pembayaran')->with('success', 'Data berhasil diperbarui.');
