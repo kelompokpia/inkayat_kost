@@ -34,10 +34,10 @@ CREATE TABLE `kamars` (
   `nama_penghuni` varchar(255) NOT NULL,
   `nik_penghuni` bigint(16) NOT NULL,
   `telepon_penghuni` bigint(13) NOT NULL,
-  `tanggal_masuk` date DEFAULT NULL,
+  `tanggal_masuk` date DEFAULT NOT NULL, 
   `deskripsi_kamar` text DEFAULT NULL,
   `status_kamar` varchar(255) DEFAULT NULL,
-  `harga_kamar` int(8) DEFAULT NULL,
+  `harga_kamar` int(8) NOT NULL,
   `alamat` varchar(100) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `created_at` timestamp NULL DEFAULT NULL
