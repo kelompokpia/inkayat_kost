@@ -118,7 +118,7 @@ elseif ($bulan==12) {
               </div>
             </div>
           </section>
-          <section class="col-md-6">
+          <section class="col-lg-6 col-12">
                 <div class="card">
                   <div class="card-header">
                     <h3 class="card-title">
@@ -135,7 +135,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='jan')
                               @if ($pembayaran->jan!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -144,7 +144,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='feb')
                               @if ($pembayaran->feb!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -153,7 +153,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='mar')
                               @if ($pembayaran->mar!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -162,7 +162,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='apr')
                               @if ($pembayaran->apr!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -171,7 +171,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='mei')
                               @if ($pembayaran->mei!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -180,7 +180,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='jun')
                               @if ($pembayaran->jun!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -189,7 +189,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='jul')
                               @if ($pembayaran->jul!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -198,7 +198,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='ags')
                               @if ($pembayaran->ags!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -207,7 +207,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='sep')
                               @if ($pembayaran->sep!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -216,7 +216,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='okt')
                               @if ($pembayaran->okt!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -225,7 +225,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='nov')
                               @if ($pembayaran->nov!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
@@ -234,7 +234,7 @@ elseif ($bulan==12) {
                             @if ($bulan=='des')
                               @if ($pembayaran->des!="Lunas")
                               <tr>
-                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td>Kamar {{ $pembayaran->kamar->nama_kamar }} - {{ $pembayaran->kamar->nama_penghuni }}</td>
                                 <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
                                 <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
                               </tr>
