@@ -15,12 +15,12 @@
               @if($kamar->gambar_kamar)
               <img src="img/{{ $kamar['gambar_kamar'] }}" class="card-img-top" alt="{{ $kamar["nama_kamar"] }}" title="{{ $kamar["nama_kamar"] }}">
               @else
-              <img src="{{ asset('img/logo.jpg')}}" alt="">
+              <img src="{{ asset('img/logo.jpg')}}" alt="" class="w-25 h-25">
               @endif
               <div class="card-body">
                 <div class="{{ ($kamar["status_kamar"]==="Terisi") ? 'kamar-status-terisi': 'kamar-status' }}">{{ $kamar["status_kamar"] }} &#8226; IDR{{ $kamar["harga_kamar"] }}K</div>
                 <h5 class="card-title">{{ $kamar["nama_kamar"] }}</h5>
-                <p class="card-text">{{ $kamar["deskripsi_kamar"] }}</p>
+                <!-- <p class="card-text">{{ $kamar["deskripsi_kamar"] }}</p> -->
                 <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn {{ ($kamar["status_kamar"]==="Terisi") ? 'disabled':'' }}" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
               </div>
             </div>
