@@ -97,7 +97,7 @@ $lastChar = substr(Request::url(), -4);
                                         <i class="bi bi-three-dots"></i>
                                         </div>
                                         <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="https://wa.me/0{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau tanggal jatuh tempo pembayaran kos kamu setiap bulan tanggal {{ substr($pembayaran->kamar->tanggal_masuk, -2) }}.Jangan lupa untuk bayar kos untuk bulan ini ya!" target="_blank"><i class="bi bi-whatsapp pe-2"></i>Ingatkan</a></li>
+                                        <li><a class="dropdown-item" href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau tanggal jatuh tempo pembayaran kos kamu setiap bulan tanggal {{ substr($pembayaran->kamar->tanggal_masuk, -2) }}.Jangan lupa untuk bayar kos untuk bulan ini ya!" target="_blank"><i class="bi bi-whatsapp pe-2"></i>Ingatkan</a></li>
                                         <li><a class="dropdown-item" href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></li>
                                         <li>
                                           <form onsubmit="return confirm('Yakin ingin menghapus data?') "class ='d-inline' action="{{ url('home/pembayaran/'.$pembayaran->id)}}"

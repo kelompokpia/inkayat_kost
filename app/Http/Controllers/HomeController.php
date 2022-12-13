@@ -7,6 +7,7 @@ use Illuminate\Support\Collection;
 use Analytics;
 use Spatie\Analytics\Period;
 use App\Models\Kamar;
+use App\Models\Pembayaran;
 
 class HomeController extends Controller
 {
@@ -17,7 +18,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        
+
         $this->middleware('auth');
     }
 
@@ -31,7 +32,8 @@ class HomeController extends Controller
         $data = Kamar::count();
         $count = Kamar::select('nama_kamar')->groupBy('nama_kamar')->get()->count();
         $nama = Kamar::all();
+        $pembayaran = Pembayaran::all();
         $analyticsData = Analytics::fetchVisitorsAndPageViews(Period::days(7));
-        return view('Admin.dasbord', compact('data','count'), ['analyticsData' => $analyticsData])->with('nama', $nama);
+        return view('Admin.dasbord', compact('data', 'count'), ['analyticsData' => $analyticsData])->with('nama', $nama)->with('pembayaran', $pembayaran);
     }
 }

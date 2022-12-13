@@ -1,6 +1,59 @@
 @extends('layout.admin')
 
 @section('content')
+<?php 
+$date=date("Y-d-m");
+$tahun=substr($date,0,4);
+$bulan=substr($date,-2);
+if ($bulan==1) {
+  $namabulan='Januari';
+  $bulan='jan';
+}
+elseif ($bulan==2) {
+  $namabulan='Februari';
+  $bulan='feb';
+}
+elseif ($bulan==3) {
+  $namabulan='Maret';
+  $bulan='mar';
+}
+elseif ($bulan==4) {
+  $namabulan='April';
+  $bulan='apr';
+}
+elseif ($bulan==5) {
+  $namabulan='Mei';
+  $bulan='mei';
+}
+elseif ($bulan==6) {
+  $namabulan='Juni';
+  $bulan='jun';
+}
+elseif ($bulan==7) {
+  $namabulan='Juli';
+  $bulan='jul';
+}
+elseif ($bulan==8) {
+  $namabulan='Agustus';
+  $bulan='ags';
+}
+elseif ($bulan==9) {
+  $namabulan='Sebtember';
+  $bulan='sep';
+}
+elseif ($bulan==10) {
+  $namabulan='Oktober';
+  $bulan='okt';
+}
+elseif ($bulan==11) {
+  $namabulan='November';
+  $bulan='nov';
+}
+elseif ($bulan==12) {
+  $namabulan='Desember';
+  $bulan='des';
+}
+?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -63,6 +116,136 @@
                     </tbody>
                   </table>
               </div>
+            </div>
+          </section>
+          <section class="col-md-6">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title">
+                      <i class="ion ion-clipboard mr-1"></i>
+                      Belum bayar bulan ini ({{ $namabulan }})
+                    </h3>
+                  </div>
+                  <div class="card-body">
+                    
+                      <table class="table-auto table table-bordered">
+                        <tbody>
+                          @foreach ($pembayaran as $pembayaran)
+                          @if ($pembayaran->tahun==$tahun)
+                            @if ($bulan=='jan')
+                              @if ($pembayaran->jan!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='feb')
+                              @if ($pembayaran->feb!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='mar')
+                              @if ($pembayaran->mar!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='apr')
+                              @if ($pembayaran->apr!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='mei')
+                              @if ($pembayaran->mei!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='jun')
+                              @if ($pembayaran->jun!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='jul')
+                              @if ($pembayaran->jul!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='ags')
+                              @if ($pembayaran->ags!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='sep')
+                              @if ($pembayaran->sep!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='okt')
+                              @if ($pembayaran->okt!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='nov')
+                              @if ($pembayaran->nov!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                            @if ($bulan=='des')
+                              @if ($pembayaran->des!="Lunas")
+                              <tr>
+                                <td>{{ $pembayaran->kamar->nama_penghuni }}</td>
+                                <td><a href="https://wa.me/{{ $pembayaran->kamar->telepon_penghuni }}?text=Hai, {{ $pembayaran->kamar->nama_penghuni }}. Sekedar mengingatkan kalau untuk bulan {{ $namabulan }}, kamu belum membayar uang kos. Jangan lupa untuk bayar kos untuk bulan ini ya!" title="Ingatkan" target="_blank"><i class="fa-brands fa-square-whatsapp text-dark fs-2"></i></a></td>
+                                <td><a href="/home/pembayaran/{{ $pembayaran->id }}/edit"><i class="bi bi-pencil-square pe-2"></i>Edit</a></td>
+                              </tr>
+                              @endif
+                            @endif
+                          @endif
+                          @endforeach
+                        </tbody>
+                      </table>
+                  </div>
+                </div>
           </section>
           <section class="col-lg-6 connectedSortable">
             <div class="card">
