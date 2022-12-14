@@ -17,7 +17,7 @@ class controlkamar extends Controller
     public function index(Request $request)
     {
         $katakunci = $request->katakunci;
-        $jumlahbaris = 5;
+        $jumlahbaris = 10;
         if (strlen($katakunci)) {
             $data = data_kamar::where('nama_penghuni', 'like', "%$katakunci%")
                 ->orWhere('nama_kamar', 'like', "%$katakunci%")
@@ -134,7 +134,7 @@ class controlkamar extends Controller
                 'nama_penghuni' => 'required',
                 'alamat' => 'required',
                 'harga_kamar' => 'required',
-                'tanggal_masuk' => 'required',
+                'tanggal_masuk' => '',
                 'status_kamar' => 'required',
             ], [
                 'nama_kamar.required' => 'Kamar wajib diisi',
