@@ -20,10 +20,20 @@
               <img src="{{ asset('img/logo.jpg')}}" alt="" class="w-25 h-25">
               @endif
               <div class="card-body">
+                @if ($kamar->status_kamar=="Tersedia")
                 <div class="{{ ($kamar["status_kamar"]==="Terisi") ? 'kamar-status-terisi': 'kamar-status' }}">{{ $kamar["status_kamar"] }} &#8226; IDR{{ $kamar["harga_kamar"] }}K</div>
+                @else
+                <div class="kamar-status-terisi">Terisi &#8226; IDR{{ $kamar["harga_kamar"] }}K</div>
+                @endif
                 <h5 class="card-title">Kamar {{ $kamar["nama_kamar"] }}</h5>
                 <!-- <p class="card-text">{{ $kamar["deskripsi_kamar"] }}</p> -->
-                <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn {{ ($kamar["status_kamar"]==="Terisi") ? 'disabled':'' }}" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
+                @if ($kamar->status_kamar=="Tersedia")
+                  <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
+                @else
+                <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn disabled" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a>
+                @endif
+                {{-- Backup tombol wa asli --}}
+                {{-- <a href="https://wa.me/0895321638507?text=Apakah%20{{ $kamar["nama_kamar"] }}%20kosong?" class="btn {{ ($kamar["status_kamar"]==="Terisi") ? 'disabled':'' }}" style="background-color: #AA8B56;" target="_blank" title="Pesan melalui Whatsapp">Pesan</a> --}}
               </div>
             </div>
         </div>
