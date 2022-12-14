@@ -125,7 +125,7 @@ class controlkamar extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id, data_kamar $data_kamar)
-    { {
+    {
             $kamar = data_kamar::find($request->id);
             $telepon = $kamar['telepon_penghuni'];
 
@@ -165,7 +165,7 @@ class controlkamar extends Controller
 
             data_kamar::where('id', $id)->update($data);
             return redirect()->to('home/datakamar')->with('success', 'Berhasil Mengubah data Inkayat Kost');
-        }
+        
     }
 
     /**
