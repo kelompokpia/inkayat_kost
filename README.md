@@ -23,6 +23,7 @@ pindahkan file service-account-credentials.json ke folder storage/app/analytics
                   @foreach ($errors->all() as $item)
                       <li>{{$item }} </li>
 @endforeach
+
 </ul>
 </div>
 </div>
