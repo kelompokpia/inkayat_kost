@@ -129,16 +129,21 @@ class PembayaranController extends Controller
         $bagi = explode('/', $url);
         $tahun = $bagi[3];
         $bulan = $bagi[4];
+
+        $kamarDenganPemasukan = Kamar::query()
+            ->leftJoin('pemasukan', 'pemasukan.pengekost', '=', 'kamars.id')
+            ->where('pemasukan.tahun', $tahun) // Filter berdasarkan tahun
+            ->where('pemasukan.bulan', $bulan) // Filter berdasarkan bulan
+            ->select('kamars.*', 'pemasukan.*') // Pilih semua kolom dari tabel 'kamars'
+            ->get();
+
         return view('pembayaran_baru.pembayaran', [
             // 'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
             // 'jumlah_data' => Pemasukan::count(),
-            'pengekosts' => Kamar::all(),
-            // 'pengekosts' => Kamar::whereHas('pemasukan', function ($query) use ($tahun, $bulan) {
-            //     $query->where('tahun', $tahun)
-            //         ->where('bulan', $bulan);
-            // })
-            //     ->get(),
+            'pengekost' => Kamar::all(),
+            'sdhbayar' => $kamarDenganPemasukan,
+            'jumlah' => Pemasukan::where('tahun', $tahun)->where('bulan', $bulan)->count(),
             'tahun' => $tahun,
             'bulan' => $bulan
             // 'kamars' => Kamar::all()

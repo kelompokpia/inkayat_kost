@@ -115,31 +115,73 @@
                         </thead>
                         <tbody>
                             @php $i=1; @endphp
-                            @foreach ($pengekosts as $p)
+                            @foreach ($pengekost as $p)
                             @php
                                 $bln2=['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni','Juli', 'Agustus','September','Oktober','November','Desember'];
                                 $tgl_masuk=$p->tanggal_masuk;
                                 $bagi=explode('-', $tgl_masuk);
-                                $bln_masuk=$bln2[$bulan[1]-1];
+                                $bln_masuk=$bln2[$bulan-1];
                                 
                                 // Cek ada data pembayaran atau tidak
-                                if (empty($p->pemasukan)) {
+                                if ($sdhbayar->contains('pengekost', $p->id)) {
+                                    $status=1; //Sudah bayar
+                                    $selisih=0;
+                                } else{
                                     $status=0; //Belum bayar
-                                    
                                     // cek selisih hari ini dan tenggat bayar
                                     $hariini=new dateTime();
                                     $hariini->setTimezone(new DateTimeZone('Asia/Jakarta'));
                                     $tenggat=new dateTime($tahun.'-'.$bulan.'-'.$bagi[2]);
                                     $tenggat->setTimezone(new DateTimeZone('Asia/Jakarta'));
-                                    $selisih=$hariini->diff($tenggat)->days;
-                                } else{
-                                    $status=1; //Sudah bayar
-                                    $selisih=0;
+                                    if ($tenggat>$hariini) {
+                                        //jika mengunjungi halaman diwaktu depan
+                                        $selisih=0;
+                                    } else{
+                                        $selisih=$hariini->diff($tenggat)->days;
+                                        // Jika tidak bayar lebih dari 30 hari
+                                        if ($selisih>30) {
+                                            $selisih=30;
+                                        }
+                                    }
                                 }
                             @endphp
                             <tr>
                                 <td>@php echo $i; $i++ @endphp</td>
-                                <td>{{$p->nama_penghuni}}</td>
+                                <td>
+                                    {{-- Nama --}}
+                                    {{$p->nama_penghuni}}
+                                    @if ($status==0 && $tenggat<$hariini)
+                                        <button class="btn" style="border-radius: 100px;" data-bs-toggle="modal" data-bs-target="#exampleModal{{ $p->id }}"><i data-feather="alert-circle" style="color: red; width:20px;"></i></button>
+
+                                        <!-- Modal Pemberitahuan -->
+                                        <div class="modal fade" id="exampleModal{{ $p->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Pengekos telat membayar</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                <div class="text-center mb-2"><i data-feather="alert-triangle" style="color: red; width:50px;"></i></div>
+                                                @php
+                                                    $deadline=$tenggat->add(new DateInterval('P10D'));
+                                                    $bataspengeluaran= $deadline->diff($hariini)->days;
+                                                    if ($bataspengeluaran>10) {
+                                                        $bataspengeluaran=10;
+                                                    }
+                                                @endphp
+                                                <p>{{ $p->nama_penghuni }} telah telat membayar kost selama {{ $selisih }} hari, sehingga denda yang harus dibayar oleh pengekos tersebut adalah Rp.{{ number_format($selisih*5000, 0, ',', '.'); }}.</p> 
+                                                @if ($bataspengeluaran>=10)
+                                                    <p>Karena sudah menunggak selama lebih dari 10 hari, anda berhak untuk mengeluarkan {{ $p->nama_penghuni}}.</p>
+                                                @else
+                                                    <p>Anda berhak mengeluarkan {{ $p->nama_penghuni}} jika dalam {{ $bataspengeluaran }} hari belum membayar kost.</p>
+                                                @endif
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                    @endif
+                                </td>
                                 <td>{{$p->nama_kamar}}</td>
                                 <td>
                                     Rp. @php echo number_format($p->harga_kamar, 0, ',', '.'); @endphp
@@ -157,10 +199,11 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if ($status==0)
-                                        Belum bayar
-                                    @else
+                                    {{-- Cek adapah sudah bayar atau belum --}}
+                                    @if ($sdhbayar->contains('pengekost', $p->id))
                                         Sudah bayar
+                                    @else
+                                        Belum bayar
                                     @endif
                                 </td>
                                 <td>
@@ -169,7 +212,12 @@
                                             <i data-feather="more-horizontal"></i>
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#"><i data-feather="phone" style="width: 17px; margin-right: 10px;"></i>Ingatkan</a></li>
+                                            @php
+                                                $belumbayar="Aku cuma mau ngingetin kalau jatuh tempo bayar kos kamu tiap tanggal ".$bagi[2]. ". Jangan lupa bayar kos untuk bulan ini ya!";
+                                                $telatbayar="Kamu udah telat bayar kost selama ". $selisih ." hari nih, jadi bapak terpaksa harus ngenain denda ke kamu Rp.".number_format($denda=$selisih*5000, 0, ',', '.').". Lain kali lebih tepat waktu lagi ya bayarnya!";
+                                                $sudahbayar="Makasih banyak ya, udah bayar uang kost. Kamu memang dapet diandelin!";
+                                            @endphp
+                                            <li><a class="dropdown-item" href="https://wa.me/{{ $p->telepon_penghuni }}?text=Hai, {{ $p->nama_penghuni }}! {{ ($status == 1) ? $sudahbayar : (($selisih > 0) ? $telatbayar : $belumbayar) }} - Bapak Kost :)" target="_blank"><i data-feather="phone" style="width: 17px; margin-right: 10px;"></i>Ingatkan</a></li>
                                             <li><a class="dropdown-item" href="#"><i data-feather="check-circle" style="width: 17px; margin-right: 10px;"></i>Sudah bayar</a></li>
                                             <li><a class="dropdown-item" href="#"><i data-feather="user-x" style="width: 17px; margin-right: 10px;"></i>Keluarkan pengekost</a></li>
                                         </ul>
@@ -247,23 +295,6 @@
         </div> -->
     </div>
     @include('datapembayaran.tambah-tahun')
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Pengekos telat membayar</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      <div class="text-center mb-2"><i data-feather="alert-triangle" style="color: red; width:50px;"></i></div>
-        <p>Nama telah telat membayar kost selama 5 hari, sehingga denda yang harus dibayar oleh pengekos tersebut adalah Rp. 20.000,00.</p> 
-        <p>Anda berhak mengeluarkan nama jika dalam 2 hari belum membayar kost.</p>
-      </div>
-    </div>
-  </div>
-</div>
 
 </section>
 @endsection
