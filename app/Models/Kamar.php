@@ -8,7 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Kamar extends Model
 {
     use HasFactory;
-    protected $fillable = ['id','nama_kamar','nama_penghuni','telepon_penghuni'];
+    protected $fillable = ['id', 'nama_kamar', 'nama_penghuni', 'telepon_penghuni'];
     protected $table = 'kamars';
     public $timetaps = false;
+
+    // Relasi dengan Tabel Pemasukan
+    public function pemasukan()
+    {
+        return $this->belongsTo(Pemasukan::class, 'id', 'pengekost');
+    }
 }

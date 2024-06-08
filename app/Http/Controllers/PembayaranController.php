@@ -5,29 +5,41 @@ namespace App\Http\Controllers;
 use App\Models\Kamar;
 use App\Models\Pembayaran;
 use App\Models\Tahun;
+use App\Models\Pemasukan;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
 {
+    public function index()
+    {
+        // Baru
+        return view('pembayaran_baru.pembayaran', [
+            'tahuns' => Tahun::all()
+        ]);
+
+        // return view('datapembayaran.pembayaran', [
+        //     'tahuns' => Tahun::all()
+        // ]);
+    }
+
     public function show()
     {
-        return view('datapembayaran.pembayaran', [
+        // Baru
+        return view('pembayaran_baru.pembayaran', [
             'pembayarans' => Pembayaran::all(),
             'tahuns' => Tahun::all()
         ]);
+
+        // return view('datapembayaran.pembayaran', [
+        //     'pembayarans' => Pembayaran::all(),
+        //     'tahuns' => Tahun::all()
+        // ]);
     }
 
     public function tambahPembayaran()
     {
         return view('datapembayaran.tambah-pembayaran', [
             'kamars' => Kamar::all(),
-            'tahuns' => Tahun::all()
-        ]);
-    }
-
-    public function index()
-    {
-        return view('datapembayaran.pembayaran', [
             'tahuns' => Tahun::all()
         ]);
     }
@@ -113,10 +125,24 @@ class PembayaranController extends Controller
 
     public function tahun()
     {
-        return view('datapembayaran.detail-pembayaran', [
-            'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
+        $url = $_SERVER['REQUEST_URI'];
+        $bagi = explode('/', $url);
+        $tahun = $bagi[3];
+        $bulan = $bagi[4];
+        return view('pembayaran_baru.pembayaran', [
+            // 'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
-            'kamars' => Kamar::all()
+            // 'jumlah_data' => Pemasukan::count(),
+            // 'pengekosts' => Kamar::all(),
+            // 'pengekosts' => Kamar::where('pemasukan.tahun', $tahun)->where('bulan', $bulan)->get(),
+            'pengekosts' => Kamar::whereHas('pemasukan', function ($query) use ($tahun, $bulan) {
+                $query->where('tahun', $tahun)
+                    ->where('bulan', $bulan);
+            })
+                ->get(),
+            'tahun' => $tahun,
+            'bulan' => $bulan
+            // 'kamars' => Kamar::all()
         ]);
     }
 
