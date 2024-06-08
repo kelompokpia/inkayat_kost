@@ -133,13 +133,12 @@ class PembayaranController extends Controller
             // 'pembayarans' => Pembayaran::orderBy('id_kamar', 'ASC')->get(),
             'tahuns' => Tahun::all(),
             // 'jumlah_data' => Pemasukan::count(),
-            // 'pengekosts' => Kamar::all(),
-            // 'pengekosts' => Kamar::where('pemasukan.tahun', $tahun)->where('bulan', $bulan)->get(),
-            'pengekosts' => Kamar::whereHas('pemasukan', function ($query) use ($tahun, $bulan) {
-                $query->where('tahun', $tahun)
-                    ->where('bulan', $bulan);
-            })
-                ->get(),
+            'pengekosts' => Kamar::all(),
+            // 'pengekosts' => Kamar::whereHas('pemasukan', function ($query) use ($tahun, $bulan) {
+            //     $query->where('tahun', $tahun)
+            //         ->where('bulan', $bulan);
+            // })
+            //     ->get(),
             'tahun' => $tahun,
             'bulan' => $bulan
             // 'kamars' => Kamar::all()
