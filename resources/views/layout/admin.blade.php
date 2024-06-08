@@ -30,6 +30,10 @@
     <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.css">
     <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/daterangepicker/daterangepicker.css" >
+
+    <!-- BARU!!! -->
+    <!-- Feathericon -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   </head>
 
   <body style = "font-family: 'Secular One', sans-serif;" class=" hold-transition sidebar-mini layout-fixed">
@@ -58,7 +62,11 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{url('home/pembayaran')}}" class="nav-link">
+                @php
+                  $tahun=date('Y');
+                  $bulan=date('m');
+                @endphp
+                <a href="{{url('home/pembayaran/'.$tahun.'/'.$bulan)}}" class="nav-link">
                     <i class="nav-icon fa-solid fa-money-bills"></i>
                   <p>
                     Pembayaran
@@ -116,5 +124,11 @@
   <script src="{{ asset('adminLTE') }}/plugins/summernote/summernote-bs4.min.js"></script>
   <script src="{{ asset('adminLTE') }}/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <script src="{{ asset('adminLTE') }}/dist/js/adminlte.js"></script>
+
+  <!-- Feathericon -->
+  <script>
+    feather.replace();
+  </script>
+
   </body>
 </html>
