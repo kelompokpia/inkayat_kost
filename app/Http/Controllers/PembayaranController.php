@@ -6,6 +6,7 @@ use App\Models\Kamar;
 use App\Models\Pembayaran;
 use App\Models\Tahun;
 use App\Models\Pemasukan;
+use App\Models\Pemasukan;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
@@ -22,13 +23,32 @@ class PembayaranController extends Controller
         // ]);
     }
 
+    public function index()
+    {
+        // Baru
+        return view('pembayaran_baru.pembayaran', [
+            'tahuns' => Tahun::all()
+        ]);
+
+        // return view('datapembayaran.pembayaran', [
+        //     'tahuns' => Tahun::all()
+        // ]);
+    }
+
     public function show()
     {
+        // Baru
+        return view('pembayaran_baru.pembayaran', [
         // Baru
         return view('pembayaran_baru.pembayaran', [
             'pembayarans' => Pembayaran::all(),
             'tahuns' => Tahun::all()
         ]);
+
+        // return view('datapembayaran.pembayaran', [
+        //     'pembayarans' => Pembayaran::all(),
+        //     'tahuns' => Tahun::all()
+        // ]);
 
         // return view('datapembayaran.pembayaran', [
         //     'pembayarans' => Pembayaran::all(),
@@ -156,3 +176,4 @@ class PembayaranController extends Controller
         return redirect()->to('/home/pembayaran')->with('success', 'Data berhasil dihapus.');
     }
 }
+
